@@ -58,7 +58,7 @@
 
             </div>
 
-            <div id="main-info" class="col-xs-8 gen-style">
+            <div id="main-info" class="col-xs-8 gen-style scrollable">
                 Erica
                 <input type="text" id='value2' class="form-control">
                 <button id='button2' class="btn-primary">submit</button>

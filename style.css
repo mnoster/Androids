@@ -46,3 +46,7 @@ body{
 #button2 , #submit {
     margin-top: 10px;
 }
+.scrollable{
+    overflow-y:scroll;
+
+}
