@@ -1,4 +1,6 @@
 <?php
-include('')
+include('mysql_connnect.php');
+
+
 
 ?>
