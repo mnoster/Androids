@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <body>
 <nav class="navbar navbar-inverse">
     <div class="contatiner-fluid">
@@ -26,27 +27,18 @@
                 <li><a href="#">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="secret.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                 <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
         </div>
     </div>
 </nav>
-<div class="container">
+<div class="container contain-secret">
     <div class="wrapper">
-        <form class="form-signin">
-            <h2 class="form-signin-heading">Sign up</h2>
-            <input type="text" class="form-control" name="username" placeholder="username"/>
-            <input type="email" class="form-control" name="email" placeholder="Email Address"/>
-            <input type="password" class="form-control" name="password" placeholder="Password" />
-            <input type="password" class="form-control" name="retype-password" placeholder="Retype Password"/>
-            <label class="checkbox">
-                <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
-            </label>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-        </form>
+        <input id="secret" type="password" class="form-control">
+        <br>
+        <button class="btn-primary">secret</button>
     </div>
-    <br>
-    <p>Already a member? Sign in <a href="login.php">here</a></p>
 </div>
 </body>
 </html>

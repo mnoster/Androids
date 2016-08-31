@@ -22,12 +22,12 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="index.php">Home</a></li>
                 <li><a href="About.html">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="secret.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                 <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
         </div>
@@ -35,18 +35,19 @@
 </nav>
 <div class="container">
     <div class="wrapper">
-    <form class="form-signin">
-        <h2 class="form-signin-heading">Please login</h2>
-        <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
-        <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
-        <label class="checkbox">
-            <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
-        </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-    </form>
+        <form class="form-signin">
+            <h2 class="form-signin-heading">Please login</h2>
+            <input type="text" class="form-control" name="username" placeholder="Email Address" required=""
+                   autofocus=""/>
+            <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
+            <label class="checkbox">
+                <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+            </label>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        </form>
         <br>
         <p>Not a member? Sign up <a href="register.php">here</a></p>
-</div>
+    </div>
 </div>
 </body>
 </html>

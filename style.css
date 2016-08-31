@@ -34,3 +34,6 @@ body{
 .w3-spin{
     display: inline-block;
 }
+.contain-secret{
+    text-align: center;
+}
