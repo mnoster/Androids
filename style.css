@@ -1,4 +1,7 @@
-
+body{
+    cursor: url("images/imageedit_12_7042320203.png"), auto;
+    background-color: black;
+}
 .main-contain{
     /*background-image:url("images/pyramid.jpg");*/
     background:url('images/pyramid.jpg') center center no-repeat;
@@ -23,4 +26,11 @@
 }
 #main-info{
     margin-left: 10px;
-  }
+}
+
+#sc-search{
+    width:90%
+}
+.w3-spin{
+    display: inline-block;
+}
