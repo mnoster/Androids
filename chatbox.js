@@ -1,3 +1,4 @@
+
 var input_val = null;
 var input_val_rpt = null;
 var array_george = [];
@@ -8,7 +9,6 @@ var array_erica = [];
 //     if (input_val == input_val_rpt) {
 //         $('.button1').attr('disabled', 'disabled');
 //     }
-
 
     //---------------on click-------------------
     $(document).on('click','#button2', function () {
