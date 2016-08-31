@@ -37,3 +37,12 @@ body{
 .contain-secret{
     text-align: center;
 }
+.contain-player{
+    text-align: right;
+}
+#main-info{
+    height: 70vh;
+}
+#button2 , #submit {
+    margin-top: 10px;
+}

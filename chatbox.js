@@ -11,7 +11,7 @@ var array_erica = [];
 
 
     //---------------on click-------------------
-    $('#button2').on('click', function () {
+    $(document).on('click','#button2', function () {
         var input_val2 = $('#value2').val();
         array_erica.push(input_val2);
         console.log(array_erica);
@@ -19,10 +19,11 @@ var array_erica = [];
             addClass: 'erica',
             html: '<strong>Erica: </strong>' + input_val2
         }));
+        $('#value2').val("");
     });
 
     // //---------------on enter-------------------
-    // $(docuemnt).on('keypress', function () {
+    // $(document).on('keypress', function () {
     //     var input_val2 = $('#value2').val();
     //     $('#value2').val('');
     //     array_erica.push(input_val2);

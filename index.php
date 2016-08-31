@@ -53,26 +53,33 @@
                 </h5>
                 <hr>
                 <input id="sc-search" type="text" class="form-control">
-                <button id="submit">search</button>
+                <button id="submit" class="btn-primary">search</button>
                 <hr>
-                <div class='contain-player'>
-                    <audio controls>
-                        <source src="songs/Tell%20Me.mp3" type="audio/mpeg">
-                        <source src="songs/Me%20de%20Amor.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <!--                <div id="SCplayer"></div>-->
-                </div>
+
             </div>
+
             <div id="main-info" class="col-xs-8 gen-style">
                 Erica
                 <input type="text" id='value2' class="form-control">
-                <button id='button2'>submit</button>
+                <button id='button2' class="btn-primary">submit</button>
                 <div id='live-feed'>
                     <h1>Live Feed:</h1>
                     <p id='new-feed'>
                     <p>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+
+            <div class='contain-player col-xs-8'>
+                <audio controls>
+                    <source src="songs/Tell%20Me.mp3" type="audio/mpeg">
+                    <source src="songs/Me%20de%20Amor.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <!--                <div id="SCplayer"></div>-->
             </div>
         </div>
     </div>
