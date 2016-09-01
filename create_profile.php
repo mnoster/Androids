@@ -37,6 +37,10 @@
     <div class="row">
         <div class="col-xs-2">
             <img id="profile_pic" src="images/alien%20profile.jpg" height="100%" width="100%">
+            <form id="file_upload">
+                <input type="file" name="upload_file">
+            </form>
+            <button type="button" id="submit" >submit</button>
         </div>
         <div class="col-xs-2">
             <div id="display_name"><h2>Alien</h2></div>
@@ -52,34 +56,31 @@
 </div>
 </body>
 </html>
-<script>
-    $(document).on('click', ".login-button", function () {
-        user_login();
-    });
-    function user_login() {
-        var email = $('#email').val();
-        console.log(email);
-        var password = $('#password').val();
-        console.log(password);
 
+<script>
+    $('#submit').on('click', function () {
+        send_img_ajax();
+    });
+    function send_img_ajax(e) {
+        var upload_file_form = $('#file_upload')[0]; //have to use the [0] because is a jQuery element and we later want to use it in javascript
+        var formData = new FormData(upload_file_form); //it is javascript here not jQuery
+        console.log("form data: " , formData);
         $.ajax({
-            url: 'login_handler.php',
-            method: 'POST',
-            data: {
-                email: email,
-                password: password
-            },
-            dataType: 'json',
+            url: "file_handler.php",
+            type:'text',
+            method: "POST",
+            cache: false,
+            mimeType: "multipart/form-data",
+            data: formData,
+            processData: false,
+            contentType: false,
             success: function (response) {
-                console.log("response is success: ", response);
-                if (response.success == true) {
-                    window.location.replace('profile.php');
-                }
+                console.log("You successfully connected: ", response);
             },
             error: function (response) {
-                console.log("there was an error: ", response);
-                $('<div>').addClass("text-danger").text("Invalid code").appendTo('#error-message');
+                console.log("There was an error: ", response);
             }
         })
     }
 </script>
+</html>

@@ -72,7 +72,7 @@
             success: function (response) {
                 console.log("response is success: ", response);
                 if (response.success == true) {
-                    window.location.replace('profile.php');
+//                    window.location.replace('create_profile.php');
                 }
             },
             error: function (response) {
