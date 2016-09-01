@@ -37,8 +37,35 @@
     <div class="wrapper">
         <input id="secret" type="password" class="form-control">
         <br>
-        <button class="btn-primary">secret</button>
+        <button class="btn-primary secret">secret</button>
     </div>
+    <div id="error-message"></div>
 </div>
 </body>
 </html>
+<script>
+    $(document).on('click',".secret",function(){
+      check_secret();
+    });
+    function check_secret(){
+        var secret = $('#secret').val();
+        $.ajax({
+            url:'secret-handler.php',
+            method: 'POST',
+            data:{
+                code:secret
+            },
+            dataType: 'json',
+            success: function(response){
+                console.log("response is success: " , response);
+                if(response.success == true){
+                    window.location.replace('register.php');
+                }
+            },
+            error: function(response){
+                console.log("there was an error: " , response);
+                $('<div>').addClass("text-danger").text("Invalid code").appendTo('#error-message');
+            }
+        })
+    }
+</script>
