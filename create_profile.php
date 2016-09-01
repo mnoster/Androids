@@ -38,22 +38,22 @@ include('user_session.php');
     </div>
 </nav>
 <div class="container profile_container">
-    <div class="row">
-        <div class="col-xs-2">
-            <img id="profile_pic" src="images/alien%20profile.jpg" height="100" width="100%">
+    <div class="row profile-row">
+        <div class="col-xs-2 border">
+            <img id="profile_pic" src="images/alien%20profile.jpg" height="100%" width="100">
             <form id="file_upload">
                 <input type="file" name="upload_file">
             </form>
             <button type="button" id="submit" >submit</button>
         </div>
-        <div class="col-xs-2">
+        <div class="col-xs-2 border">
             <div id="display_name"><h2>Alien</h2></div>
             <div id="location">location</div>
             <div id="quote"><?=$_SESSION['username']?></div>
         </div>
-        <div class="col-xs-9">
+        <div class="col-xs-9 border">
             <div class="profile-header">
-
+                
             </div>
         </div>
     </div>

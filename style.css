@@ -57,6 +57,10 @@ body{
 .profile_container{
     border:1px solid black;
     border-radius: 3px;
+    margin-top:10px;
+}
+.profile-row{
+    padding-top: 10px;
 }
 /*------login data-------*/
 .login-background{
@@ -74,4 +78,7 @@ body{
 }
 .form-signin{
     padding-top: 10px;
+}
+.border{
+    border:1px solid red;
 }
