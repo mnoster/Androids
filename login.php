@@ -37,17 +37,46 @@
     <div class="wrapper">
         <form class="form-signin">
             <h2 class="form-signin-heading">Please login</h2>
-            <input type="text" class="form-control" name="username" placeholder="Email Address" required=""
+            <input type="text" id="email" class="form-control" name="email" placeholder="Email Address" required=""
                    autofocus=""/>
-            <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
+            <input id="password" type="password" class="form-control" name="password" placeholder="Password" required=""/>
             <label class="checkbox">
                 <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
             </label>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
         </form>
+        <button class="btn btn-lg btn-primary btn-block login-button">Login</button>
         <br>
-        <p>Not a member? Sign up <a href="register.php">here</a></p>
+        <p>Not a member? Sign up <a href="secret.php">here</a></p>
     </div>
 </div>
 </body>
 </html>
+<script>
+    $(document).on('click', ".login-button", function () {
+        user_login();
+    });
+    function user_login() {
+        var email = $('#email').val();
+        var password = $('#password').val();
+
+        $.ajax({
+            url: 'login_handler.php',
+            method: 'POST',
+            data: {
+                email: email,
+                password: password
+            },
+            dataType: 'json',
+            success: function (response) {
+                console.log("response is success: ", response);
+                if (response.success == true) {
+                    window.location.replace('profile.php');
+                }
+            },
+            error: function (response) {
+                console.log("there was an error: ", response);
+                $('<div>').addClass("text-danger").text("Invalid code").appendTo('#error-message');
+            }
+        })
+    }
+</script>

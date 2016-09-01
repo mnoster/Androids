@@ -55,9 +55,7 @@
                 <input id="sc-search" type="text" class="form-control">
                 <button id="submit" class="btn-primary">search</button>
                 <hr>
-
             </div>
-
             <div id="main-info" class="col-xs-8 gen-style scrollable">
                 Erica
                 <input type="text" id='value2' class="form-control">
