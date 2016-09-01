@@ -44,7 +44,7 @@ $_SESSION['url'] = "";
     <div class="wrapper">
         <form class="form-signin">
             <h2 class="form-signin-heading">Please login</h2>
-            <input type="text" id="email" class="form-control" name="email" placeholder="Email Address" required=""
+            <input type="text" id="username" class="form-control" name="username" placeholder="username" required=""
                    autofocus/>
             <input id="password" type="password" class="form-control" name="password" placeholder="Password" />
             <label class="checkbox">
@@ -64,8 +64,8 @@ $_SESSION['url'] = "";
         user_login();
     });
     function user_login() {
-        var email = $('#email').val();
-        console.log(email);
+        var username = $('#username').val();
+        console.log(username);
         var password = $('#password').val();
         console.log(password);
 
@@ -73,7 +73,7 @@ $_SESSION['url'] = "";
             url: 'login_handler.php',
             method: 'POST',
             data: {
-                email: email,
+                username: username,
                 password: password
             },
             dataType: 'json',

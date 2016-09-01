@@ -7,8 +7,6 @@ $password = mysqli_real_escape_string($conn,$_POST['password']);
 $encrypted_pass = sha1($password);
 
 $output = [];
-//$arrayy =[];
-
 
 $query = "SELECT * FROM `users` WHERE `username` = '$username' AND `password`='$encrypted_pass'";
 

@@ -1,5 +1,5 @@
 <?php
-include('session.php');
+include('user_session.php');
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +40,7 @@ include('session.php');
 <div class="container profile_container">
     <div class="row">
         <div class="col-xs-2">
-            <img id="profile_pic" src="images/alien%20profile.jpg" height="100%" width="100%">
+            <img id="profile_pic" src="images/alien%20profile.jpg" height="100" width="100%">
             <form id="file_upload">
                 <input type="file" name="upload_file">
             </form>
@@ -49,7 +49,7 @@ include('session.php');
         <div class="col-xs-2">
             <div id="display_name"><h2>Alien</h2></div>
             <div id="location">location</div>
-            <div id="quote">Quote</div>
+            <div id="quote"><?=$_SESSION['username']?></div>
         </div>
         <div class="col-xs-9">
             <div class="profile-header">
