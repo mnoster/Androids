@@ -7,7 +7,7 @@ $password = mysqli_real_escape_string($conn,$_POST['password']);
 $encrypted_pass = sha1($password);
 
 $output = [];
-$arrayy =[];
+//$arrayy =[];
 
 
 $query = "SELECT * FROM `users` WHERE `email` = '$email' AND `password`='$encrypted_pass'";
@@ -32,8 +32,8 @@ $rows_affected = mysqli_affected_rows($conn);
 //}
 
 
-
-
+//when you have a query that is frequently being used you should encrypt and cache the response
+//use the php apc functions
 
 if($rows_affected > 0){
     $output['message'] = 'success';
@@ -47,6 +47,3 @@ if($rows_affected > 0){
     print($output);
 }
 ?>
-
-<!--//when you have a query that is frequently being used you should encrypt and cache the response-->
-<!--//use the php apc functions -->

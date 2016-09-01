@@ -7,6 +7,9 @@ body{
     background:url('images/pyramid.jpg') center center no-repeat;
     background-color: black;
 }
+.nav, .navbar , .navbar-inverse{
+    margin-bottom: 0 !important;
+}
 .main-head{
     background: rgba(251, 253, 255, 0.73);
     text-align: center;
@@ -53,4 +56,18 @@ body{
 .profile_container{
     border:1px solid black;
     border-radius: 3px;
+}
+/*------login data-------*/
+.login-background{
+    background:url('images/pyramid.jpg') center center no-repeat;
+    height:90vh;
+
+}
+.login-inner{
+    background: rgba(251, 253, 255, 0.73);
+    text-align: center;
+    text-shadow: #dccdff 2px 2px;
+    height:90vh;
+    width:100%;
+    overflow:hidden;
 }

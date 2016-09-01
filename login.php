@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>Androids</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
 
 <body>
 <nav class="navbar navbar-inverse">
@@ -33,7 +33,8 @@
         </div>
     </div>
 </nav>
-<div class="container">
+<div class="container login-background">
+    <div class="col-xs-12 login-inner">
     <div class="wrapper">
         <form class="form-signin">
             <h2 class="form-signin-heading">Please login</h2>
@@ -47,6 +48,7 @@
         <button class="btn btn-lg btn-primary btn-block login-button">Login</button>
         <br>
         <p>Not a member? Sign up <a href="secret.php">here</a></p>
+    </div>
     </div>
 </div>
 </body>
