@@ -38,8 +38,8 @@
         <form class="form-signin">
             <h2 class="form-signin-heading">Please login</h2>
             <input type="text" id="email" class="form-control" name="email" placeholder="Email Address" required=""
-                   autofocus=""/>
-            <input id="password" type="password" class="form-control" name="password" placeholder="Password" required=""/>
+                   autofocus/>
+            <input id="password" type="password" class="form-control" name="password" placeholder="Password" />
             <label class="checkbox">
                 <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
             </label>
@@ -57,7 +57,9 @@
     });
     function user_login() {
         var email = $('#email').val();
+        console.log(email);
         var password = $('#password').val();
+        console.log(password);
 
         $.ajax({
             url: 'login_handler.php',
