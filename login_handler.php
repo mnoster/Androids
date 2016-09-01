@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('mysql_connect.php');
-$email = mysqli_real_escape_string($conn,$_POST['email']);
+$username = mysqli_real_escape_string($conn,$_POST['username']);
 $password = mysqli_real_escape_string($conn,$_POST['password']);
 
 $encrypted_pass = sha1($password);
@@ -10,7 +10,7 @@ $output = [];
 //$arrayy =[];
 
 
-$query = "SELECT * FROM `users` WHERE `email` = '$email' AND `password`='$encrypted_pass'";
+$query = "SELECT * FROM `users` WHERE `username` = '$username' AND `password`='$encrypted_pass'";
 
 mysqli_query($conn,$query);
 
@@ -36,6 +36,7 @@ $rows_affected = mysqli_affected_rows($conn);
 //use the php apc functions
 
 if($rows_affected > 0){
+    $_SESSION['username'] = $username;
     $output['message'] = 'success';
     $output['success'] = true;
     $output = json_encode($output);

@@ -1,3 +1,9 @@
+<?php
+session_start();
+$_SESSION['username'] = "";
+$_SESSION['url'] = "";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,6 +80,7 @@
             success: function (response) {
                 console.log("response is success: ", response);
                 if (response.success == true) {
+
                     window.location.replace('create_profile.php');
                 }
             },

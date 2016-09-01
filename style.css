@@ -72,3 +72,6 @@ body{
     width:100%;
     overflow:hidden;
 }
+.form-signin{
+    padding-top: 10px;
+}
