@@ -1,0 +1,56 @@
+body{
+    cursor: url("images/imageedit_12_7042320203.png"), auto;
+    background-color: black;
+}
+.main-contain{
+    /*background-image:url("images/pyramid.jpg");*/
+    background:url('images/pyramid.jpg') center center no-repeat;
+    background-color: black;
+}
+.main-head{
+    background: rgba(251, 253, 255, 0.73);
+    text-align: center;
+    text-shadow: #dccdff 2px 2px;
+}
+.navigation-titles{
+    color: greenyellow;
+}
+.navbar-inverse{
+    color: greenyellow;
+}
+.gen-style{
+    border:1px solid black;
+    border-radius: 3px;
+    height: 40vh;
+    margin-top: 10px;
+}
+#main-info{
+    margin-left: 10px;
+}
+
+#sc-search{
+    width:90%
+}
+.w3-spin{
+    display: inline-block;
+}
+.contain-secret{
+    text-align: center;
+}
+.contain-player{
+    text-align: right;
+}
+#main-info{
+    height: 70vh;
+}
+#button2 , #submit {
+    margin-top: 10px;
+}
+.scrollable{
+    overflow-y:scroll;
+
+}
+.profile_container{
+    border:1px solid black;
+    border-radius: 3px;
+}
