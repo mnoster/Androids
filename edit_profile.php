@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(empty($_SESSION)) {
+    header("Location: login.php"); /* Redirect browser */
+    exit();
+}
+?>
+<?php
+include('user_session.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,15 +16,10 @@
     <title>Androids</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css">
-    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!--    <script src="soundcloud.js"></script>-->
-    <script src="chatbox.js"></script>
 
-</head>
 <body>
 <nav class="navbar navbar-inverse">
     <div class="contatiner-fluid">
@@ -42,6 +48,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="secret.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <!--                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Login<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -50,44 +57,73 @@
                         <li><a href="login.php">Login</a></li>
 
                     </ul>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
-<div class="container">
-    <div class="container main-contain">
-        <div class="row">
-            <div class="col-xs-12 main-head">
-                <h1>Android Space Chat</h1>
+<div class="container profile_container">
+    <div class="row profile-row">
+        <div class="col-xs-2 border">
+            <img id="profile_pic" src="images/alien%20profile.jpg" height="100%" width="100">
+            <form id="file_upload">
+                <input type="file" name="upload_file">
+            </form>
+            <button type="button" id="submit" >submit</button>
+        </div>
+        <div class="col-xs-2 border">
+            <div id="display_name"><h2>Alien</h2></div>
+            <div id="location">location</div>
+            <div id="quote"><?=$_SESSION['username']?></div>
+        </div>
+        <div class="col-xs-9 border">
+            <div class="profile-header">
+                <button class="btn btn-primary">connect</button>
+                <button class="btn btn-warning">squad</button>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div id="left-nav" class="col-xs-3 gen-style">
-                <h5><i class="fa fa-spinner w3-spin" style="font-size:64px"></i>
-                </h5>
-                <hr>
-                <input id="sc-search" type="text" class="form-control">
-                <button id="submit" class="btn-primary">search</button>
-                <hr>
-            </div>
-            <div id="main-info" class="col-xs-8 gen-style scrollable">
-                Erica
-                <input type="text" id='value2' class="form-control">
-                <button id='button2' class="btn-primary">submit</button>
-                <div id='live-feed'>
-                    <h1>Live Feed:</h1>
-                    <p id='new-feed'>
-                    <p>
-                </div>
-            </div>
+    <div class="row border">
+        <div class="col-xs-4 border ">
+            <audio controls>
+                <source src="songs/Tell%20Me.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
+    <div class="row border">
+        <div class="col-xs-4 fav-animal">
+            <h4>Fav Animal</h4>
         </div>
     </div>
 </div>
-
+</body>
 </html>
+
+<script>
+    $('#submit').on('click', function () {
+        send_img_ajax();
+    });
+    function send_img_ajax(e) {
+        var upload_file_form = $('#file_upload')[0]; //have to use the [0] because is a jQuery element and we later want to use it in javascript
+        var formData = new FormData(upload_file_form); //it is javascript here not jQuery
+        console.log("form data: " , formData);
+        $.ajax({
+            url: "file_handler.php",
+            type:'text',
+            method: "POST",
+            cache: false,
+            mimeType: "multipart/form-data",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                console.log("You successfully connected: ", response);
+            },
+            error: function (response) {
+                console.log("There was an error: ", response);
+            }
+        })
+    }
+</script>
+

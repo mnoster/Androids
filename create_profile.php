@@ -26,13 +26,31 @@ include('user_session.php');
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.php">Home</a></li>
-                <li><a href="About.html">About</a></li>
+                <li class="active"><a href="index.php">Chat</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ME<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="create_profile.php">profile</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="companions.php">connects</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="squad.php">squad</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="secret.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+<!--                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Login<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                        <li role="separator" class="divider"></li>
+                         <li><a href="login.php">Login</a></li>
+
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
@@ -53,8 +71,22 @@ include('user_session.php');
         </div>
         <div class="col-xs-9 border">
             <div class="profile-header">
-                
+                <button class="btn btn-primary">connect</button>
+                <button class="btn btn-warning">squad</button>
             </div>
+        </div>
+    </div>
+    <div class="row border">
+        <div class="col-xs-4 border ">
+            <audio controls>
+                <source src="songs/Tell%20Me.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+    <div class="row border">
+        <div class="col-xs-4 fav-animal">
+            <h4>Fav Animal</h4>
         </div>
     </div>
 </div>

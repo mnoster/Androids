@@ -1,5 +1,8 @@
 <?php
 include('mysql_connect.php');
+if ($conn->connect_error) {
+    die("Connection failed ");
+}
 $secret_code = mysqli_real_escape_string($conn,$_POST['code']);
 
 $query = "SELECT * FROM `secret` WHERE `code` = '$secret_code'";
