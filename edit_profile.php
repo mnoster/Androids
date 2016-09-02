@@ -1,4 +1,11 @@
 <?php
+session_start();
+if(empty($_SESSION)) {
+    header("Location: login.php"); /* Redirect browser */
+    exit();
+}
+?>
+<?php
 include('user_session.php');
 ?>
 
@@ -41,13 +48,13 @@ include('user_session.php');
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="secret.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-<!--                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
+                <!--                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Login<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                         <li role="separator" class="divider"></li>
-                         <li><a href="login.php">Login</a></li>
+                        <li><a href="login.php">Login</a></li>
 
                     </ul>
                 </li>
@@ -119,3 +126,4 @@ include('user_session.php');
         })
     }
 </script>
+

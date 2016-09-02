@@ -8,7 +8,7 @@ $_SESSION['url'] = "";
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Androids</title>
+    <title>Androids | Logout</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
@@ -24,11 +24,12 @@ $_SESSION['url'] = "";
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand">Androids</a>
+            <a class="navbar-brand" href=index.php>Androids</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="">Home</a></li>
+                <li class="active"><a href="index.php">Chat</a></li>
+                <li><a href="About.html">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -39,53 +40,32 @@ $_SESSION['url'] = "";
     </div>
 </nav>
 <div class="container login-background">
-    <div class="col-xs-12 login-inner">
-    <div class="wrapper">
-        <form class="form-signin">
-            <h2 class="form-signin-heading">Please login</h2>
-            <input type="text" id="username" class="form-control" name="username" placeholder="username" required=""
-                   autofocus/>
-            <input id="password" type="password" class="form-control" name="password" placeholder="Password" />
-            <label class="checkbox">
-                <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
-            </label>
-        </form>
-        <button class="btn btn-lg btn-primary btn-block login-button">Login</button>
-        <br>
-        <p>Not a member? Sign up <a href="secret.php">here</a></p>
-    </div>
+    <div class="col-xs-6 login-inner">
+        <div class="logout-title">
+            <button class="btn btn-lg btn-primary logout-button">Logout</button>
+        </div>
     </div>
 </div>
 </body>
 </html>
 <script>
-    $(document).on('click', ".login-button", function () {
-        user_login();
+    $(document).on('click', ".logout-button", function () {
+        user_logout();
     });
-    function user_login() {
-        var username = $('#username').val();
-        console.log(username);
-        var password = $('#password').val();
-        console.log(password);
-
+    function user_logout() {
         $.ajax({
-            url: 'login_handler.php',
+            url: 'logout_handler.php',
             method: 'POST',
-            data: {
-                username: username,
-                password: password
-            },
             dataType: 'json',
             success: function (response) {
                 console.log("response is success: ", response);
-                if (response.success == true) {
-
-                    window.location.replace('create_profile.php');
+                if(response.status == "you are logged out"){
+                   window.location.replace('login.php');
                 }
+
             },
             error: function (response) {
-                console.log("there was an error: ", response);
-                $('<div>').addClass("text-danger").text("Invalid code").appendTo('#error-message');
+                console.log("there was an error logging out: ", response);
             }
         })
     }
