@@ -63,7 +63,7 @@ if(empty($_SESSION)) {
     <div class="row profile-row">
         <div class="col-xs-2 border">
             <img id="profile_pic" src="<?=$_SESSION['profile_image_path']?>" height="100" width="100">
-            <button type="button" id="submit" >submit</button>
+<!--            <button type="button" id="submit" >submit</button>-->
         </div>
         <div class="col-xs-2 border">
             <div id="display_name"><h2><?=$_SESSION['username']?></h2></div>

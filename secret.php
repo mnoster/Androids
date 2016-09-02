@@ -59,7 +59,7 @@
             success: function(response){
                 console.log("response is success: " , response);
                 if(response.success == true){
-                    window.location.replace('register.php');
+                    window.location.replace('register_user.php');
                 }
             },
             error: function(response){
