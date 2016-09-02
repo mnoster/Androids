@@ -17,7 +17,7 @@ mysqli_query($conn,$query);
 
 
 $rows_affected = mysqli_affected_rows($conn);
-
+$password = "";
 
 if($rows_affected > 0){
     $_SESSION['username'] = $username;

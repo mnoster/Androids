@@ -61,9 +61,9 @@
         var password = $('#password').val();
         console.log(password);
         var password2 = $('#password2').val();
-        console.log(password);
+        console.log(password2);
         var email = $('#email').val();
-        console.log(password);
+        console.log(email);
 
 
         $.ajax({

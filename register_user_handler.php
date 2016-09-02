@@ -19,13 +19,13 @@ $encrypted_pass = sha1($password);
 
 $output = [];
 
-$query = "INSERT INTO `users`(`email`, `password`, `username`) VALUES '$email' AND '$encrypted_pass' AND '$username')";
+$query = "INSERT INTO users (email, password, username) VALUES ('$email' , '$encrypted_pass' , '$username')";
 
 mysqli_query($conn,$query);
 $password = " ";
 
 $rows_affected = mysqli_affected_rows($conn);
-print($rows_affected);
+
 
 
 if($rows_affected > 0){
