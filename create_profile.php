@@ -1,6 +1,4 @@
-<?php
-include('user_session.php');
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,16 +56,16 @@ include('user_session.php');
 <div class="container profile_container">
     <div class="row profile-row">
         <div class="col-xs-2 border">
-            <img id="profile_pic" src="images/alien%20profile.jpg" height="100%" width="100">
+            <img id="profile_pic" src="<?=$_SESSION['profile_image_path']?>" height="100" width="100">
             <form id="file_upload">
                 <input type="file" name="upload_file">
             </form>
             <button type="button" id="submit" >submit</button>
         </div>
         <div class="col-xs-2 border">
-            <div id="display_name"><h2>Alien</h2></div>
+            <div id="display_name"><h2><?=$_SESSION['username']?></h2></div>
             <div id="location">location</div>
-            <div id="quote"><?=$_SESSION['username']?></div>
+            <div id="quote"><?=$_SESSION['quote']?></div>
         </div>
         <div class="col-xs-9 border">
             <div class="profile-header">

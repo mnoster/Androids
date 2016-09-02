@@ -5,9 +5,6 @@ if(empty($_SESSION)) {
     exit();
 }
 ?>
-<?php
-include('user_session.php');
-?>
 
 <!DOCTYPE html>
 <html lang="en">
