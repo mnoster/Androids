@@ -25,6 +25,8 @@ if ($result->num_rows > 0) {
         $_SESSION['background_image_path']=$row["background_image_path"] ;
         $user_info[] = $row["profile_image_path"];
         $_SESSION['profile_image_path']=$row["profile_image_path"];
+        $user_info['user_song'] = $row["user_song"];
+        $_SESSION['user_song']=$row["user_song"];
 //        echo "username: " . $row["username"]. " profile image: " . $row["quote"]. " " . $row["background_image_path"]. "<br>";
     }
 } else {

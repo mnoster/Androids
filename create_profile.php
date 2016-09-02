@@ -1,7 +1,10 @@
 <?php
 session_start();
+if(empty($_SESSION)) {
+    header("Location: login.php"); /* Redirect browser, this function is not working properly */ 
+    exit();
+}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -77,7 +80,7 @@ session_start();
     <div class="row border">
         <div class="col-xs-4 border ">
             <audio controls>
-                <source src="songs/Tell%20Me.mp3" type="audio/mpeg">
+                <source src="<?$_SESSION['user_song']?>" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
         </div>
