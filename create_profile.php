@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 
 
 <!DOCTYPE html>
@@ -57,9 +60,6 @@
     <div class="row profile-row">
         <div class="col-xs-2 border">
             <img id="profile_pic" src="<?=$_SESSION['profile_image_path']?>" height="100" width="100">
-            <form id="file_upload">
-                <input type="file" name="upload_file">
-            </form>
             <button type="button" id="submit" >submit</button>
         </div>
         <div class="col-xs-2 border">
