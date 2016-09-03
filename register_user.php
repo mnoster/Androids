@@ -64,8 +64,7 @@
         console.log(password2);
         var email = $('#email').val();
         console.log(email);
-
-
+        
         $.ajax({
             url: 'register_user_handler.php',
             method: 'POST',

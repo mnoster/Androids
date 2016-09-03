@@ -9,7 +9,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<body>
+<body style="{'background-color': 'black'}">
 <nav class="navbar navbar-inverse">
     <div class="contatiner-fluid">
         <div class="navbar-header navigation-titles">
@@ -34,10 +34,10 @@
     </div>
 </nav>
 <div class="container contain-secret">
-    <div class="wrapper">
-        <input id="secret" type="password" class="form-control">
+    <div class="login-inner">
+        <input id="secret" type="password" class="form-control" required="" autofocus >
         <br>
-        <button class="btn-primary secret">secret</button>
+        <button class="btn-primary">secret</button>
     </div>
     <div id="error-message"></div>
 </div>

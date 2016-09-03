@@ -4,6 +4,7 @@ if(empty($_SESSION)) {
     header("Location: login.php"); /* Redirect browser, this function is not working properly */ 
     exit();
 }
+//print_r($_SESSION['background-image-path']);
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +40,8 @@ if(empty($_SESSION)) {
                         <li><a href="companions.php">connects</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="squad.php">squad</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="edit_profile.php">edit profile</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Contact</a></li>
@@ -59,21 +62,21 @@ if(empty($_SESSION)) {
         </div>
     </div>
 </nav>
-<div class="container profile_container">
+<div class="container profile_container" style = "{ background-image : url('<?$_SESSION['background_image_path']?>')}" >
     <div class="row profile-row">
-        <div class="col-xs-2 border">
+        <div class="col-xs-4 col-md-3 col-lg-2 border">
             <img id="profile_pic" src="<?=$_SESSION['profile_image_path']?>" height="100" width="100">
 <!--            <button type="button" id="submit" >submit</button>-->
         </div>
-        <div class="col-xs-2 border">
+        <div class="col-xs-3 border">
             <div id="display_name"><h2><?=$_SESSION['username']?></h2></div>
             <div id="location">location</div>
             <div id="quote"><?=$_SESSION['quote']?></div>
         </div>
-        <div class="col-xs-9 border">
+        <div class="col-xs-5 border">
             <div class="profile-header">
-                <button class="btn btn-primary">connect</button>
-                <button class="btn btn-warning">squad</button>
+                <button id="connect" class="btn btn-primary button-style">connect</button>
+                <button id="squad" class="btn btn-warning button-style">squad</button>
             </div>
         </div>
     </div>
@@ -91,28 +94,45 @@ if(empty($_SESSION)) {
         </div>
     </div>
 </div>
+<div class="container profile_container">
+    <div class="row middle-profile-row">
+        <div><h4>Train</h4></div>
+    </div>
+</div>
 </body>
 </html>
 
 <script>
-    $('#submit').on('click', function () {
-        send_img_ajax();
+    $('#squad').on('click', function () {
+        add_to_squad();
     });
-    function send_img_ajax(e) {
-        var upload_file_form = $('#file_upload')[0]; //have to use the [0] because is a jQuery element and we later want to use it in javascript
-        var formData = new FormData(upload_file_form); //it is javascript here not jQuery
-        console.log("form data: " , formData);
+    function add_to_squad(e) {
         $.ajax({
-            url: "file_handler.php",
+            url: "squad_handler.php",
             type:'text',
             method: "POST",
-            cache: false,
-            mimeType: "multipart/form-data",
-            data: formData,
-            processData: false,
-            contentType: false,
             success: function (response) {
                 console.log("You successfully connected: ", response);
+                $('#squad').text("remove squad");
+
+            },
+            error: function (response) {
+                console.log("There was an error: ", response);
+            }
+        })
+    }
+    $('#connect').on('click', function () {
+        connect();
+    });
+    function connect(e) {
+        $.ajax({
+            url: "connect_handler.php",
+            type:'text',
+            method: "POST",
+            success: function (response) {
+                console.log("You successfully connected: ", response);
+                $('#connect').text("remove connect");
+
             },
             error: function (response) {
                 console.log("There was an error: ", response);

@@ -8,7 +8,6 @@ body{
     background-color: black;
 }
 .navbar{
-
     margin-bottom: 0 !important;
 }
 .main-head{
@@ -40,6 +39,11 @@ body{
 }
 .contain-secret{
     text-align: center;
+    background:url('images/pyramid.jpg') center center no-repeat;
+    height:90vh;
+}
+#secret{
+    margin-top: 30vh;
 }
 .contain-player{
     text-align: right;
@@ -65,6 +69,12 @@ body{
 .profile-header{
     text-align: right;
 }
+.middle-profile-row{
+    text-align:center;
+}
+.button-style{
+    margin:4px 3px;
+}
 /*------login data-------*/
 .login-background{
     background:url('images/pyramid.jpg') center center no-repeat;
@@ -88,4 +98,28 @@ body{
 /*---------logout-----------*/
 .logout-title{
     margin-top:40vh;
+}
+/*----------edit profile---------*/
+.edit_profile_container{
+    color: #eaeaea;
+    text-align: center;
+    text-shadow: black 1px 1px;
+    border:1px solid black;
+    border-radius: 3px;
+    background:url('images/pyramid.jpg') center center no-repeat;
+    background-color: black;
+    height:95vh;
+
+}
+.edit_profile_row{
+    text-align: left;
+    background: rgba(0, 39, 255, 0.53);
+    padding-top: 10px;
+}
+#save_changes_btn{
+    margin:10px 8px;
+    color:black;
+}
+.file_btn, #file_upload{
+    text-align: right;
 }
