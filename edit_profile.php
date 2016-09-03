@@ -68,7 +68,7 @@ if (empty($_SESSION)) {
     <div class="row edit_profile_row">
         <div class="col-xs-2 border">
             <h4>Display Name: </h4><input id="display_name" placeholder="<?= $_SESSION['display_name'] ?>">
-            <h4>Country: </h4><input id="location" placeholder="<?= $_SESSION['country'] ?>">
+            <h4>Country: </h4><input id="country" placeholder="<?= $_SESSION['country'] ?>">
             <h4>Quote: </h4><input id="quote" placeholder="<?= $_SESSION['quote'] ?>">
             <h4>Gender: </h4>
             <select>
@@ -96,22 +96,31 @@ if (empty($_SESSION)) {
 </html>
 
 <script>
-    $('#submit').on('click', function () {
-        send_img_ajax();
+    $('#save_changes_btn').on('click', function () {
+        update_profile();
     });
-    function send_img_ajax(e) {
-        var upload_file_form = $('#file_upload')[0]; //have to use the [0] because is a jQuery element and we later want to use it in javascript
-        var formData = new FormData(upload_file_form); //it is javascript here not jQuery
-        console.log("form data: ", formData);
+    function update_profile(e) {
+        var display_name = $('#display_name').val(); //have to use the [0] because is a jQuery element and we later want to use it in javascript
+        var country = $('#country').val(); //it is javascript here not jQuery
+        var age = $('#age').val();
+        var quote = $('#quote').val();
+        var first_name =$('#first_name').val();
+        var last_name = $("#last_name").val();
+        var email = $("#email").val();
+//        var gender = $('');
         $.ajax({
-            url: "file_handler.php",
-            type: 'text',
+            url: "edit_profile_handler.php",
+            type: 'json',
             method: "POST",
-            cache: false,
-            mimeType: "multipart/form-data",
-            data: formData,
-            processData: false,
-            contentType: false,
+            data: {
+                display_name: display_name,
+                country:country,
+                age: age,
+                quote: quote,
+                first_name: first_name,
+                last_name:last_name,
+                email:email
+            },
             success: function (response) {
                 console.log("You successfully connected: ", response);
             },
