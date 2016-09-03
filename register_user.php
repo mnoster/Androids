@@ -35,18 +35,61 @@
     <div class="wrapper">
         <form class="form-signin">
             <h2 class="form-signin-heading">Sign up</h2>
-            <input type="text" class="form-control" name="username" placeholder="username"/>
-            <input type="email" class="form-control" name="email" placeholder="Email Address"/>
-            <input type="password" class="form-control" name="password" placeholder="Password" />
-            <input type="password" class="form-control" name="retype-password" placeholder="Retype Password"/>
+            <input type="text" class="form-control" name="username" id="username" placeholder="username"/>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Email Address"/>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Password" />
+            <input type="password" class="form-control" name="password2" id="password2" placeholder="Retype Password"/>
             <label class="checkbox">
                 <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
             </label>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
         </form>
+        <button class="btn btn-lg btn-primary btn-block" id="create_user">Login</button>
     </div>
     <br>
     <p>Already a member? Sign in <a href="login.php">here</a></p>
+    <div id="#error-message"></div>
 </div>
 </body>
 </html>
+<script>
+    $(document).on('click', "#create_user", function () {
+        create_user();
+    });
+    function create_user() {
+        var username = $('#username').val();
+        console.log(username);
+        var password = $('#password').val();
+        console.log(password);
+        var password2 = $('#password2').val();
+        console.log(password2);
+        var email = $('#email').val();
+        console.log(email);
+        
+        $.ajax({
+            url: 'register_user_handler.php',
+            method: 'POST',
+            data: {
+                username: username,
+                password: password,
+                password2: password2,
+                email:email
+            },
+            dataType: 'json',
+            success: function (response) {
+                console.log("response is success: ", response);
+                if(response.message == "You typed the password incorrectly"){
+                    $('<div>').addClass("text-danger").text("Username or email is already been used").appendTo('#error-message');
+                    return;
+                }
+                if (response.success == true) {
+                    window.location.replace('login.php');
+                }
+            },
+            error: function (response) {
+                console.log("there was an error: ", response);
+                $('<div>').addClass("text-danger").text("Username or email is already been used").appendTo('#error-message');
+            }
+        })
+    }
+
+</script>

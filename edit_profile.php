@@ -1,12 +1,9 @@
 <?php
 session_start();
-if(empty($_SESSION)) {
+if (empty($_SESSION)) {
     header("Location: login.php"); /* Redirect browser */
     exit();
 }
-?>
-<?php
-include('user_session.php');
 ?>
 
 <!DOCTYPE html>
@@ -35,13 +32,16 @@ include('user_session.php');
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php">Chat</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ME<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">ME<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="create_profile.php">profile</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="companions.php">connects</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="squad.php">squad</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="edit_profile.php">edit profile</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Contact</a></li>
@@ -50,73 +50,80 @@ include('user_session.php');
                 <li><a href="secret.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                 <!--                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Login<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Login<span
+                            class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="login.php">Login</a></li>
-
                     </ul>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<div class="container profile_container">
-    <div class="row profile-row">
+<div class="container edit_profile_container ">
+    <h2>Edit Profile</h2>
+    <div class="row edit_profile_row">
         <div class="col-xs-2 border">
-            <img id="profile_pic" src="images/alien%20profile.jpg" height="100%" width="100">
-            <form id="file_upload">
-                <input type="file" name="upload_file">
-            </form>
-            <button type="button" id="submit" >submit</button>
+            <h4>Display Name: </h4><input id="display_name" placeholder="<?= $_SESSION['display_name'] ?>">
+            <h4>Country: </h4><input id="country" placeholder="<?= $_SESSION['country'] ?>">
+            <h4>Quote: </h4><input id="quote" placeholder="<?= $_SESSION['quote'] ?>">
+            <h4>Gender: </h4>
+            <select id="gender">
+                <option></option>
+                <option value="Man">Man</option>
+                <option value="Woman">Woman</option>
+            </select>
+            <h4>First Name: </h4><input id="first_name" placeholder="<?= $_SESSION['first_name'] ?>">
+            <h4>Last Name: </h4><input id="last_name" placeholder="<?= $_SESSION['last_name'] ?>">
+            <h4>Email: </h4><input id="email" placeholder="<?= $_SESSION['email'] ?>">
+            <h4>Age: </h4><input id="age" placeholder="<?= $_SESSION['age'] ?>">
+            <button class="btn" id="save_changes_btn">save changes</button>
         </div>
-        <div class="col-xs-2 border">
-            <div id="display_name"><h2>Alien</h2></div>
-            <div id="location">location</div>
-            <div id="quote"><?=$_SESSION['username']?></div>
-        </div>
-        <div class="col-xs-9 border">
-            <div class="profile-header">
-                <button class="btn btn-primary">connect</button>
-                <button class="btn btn-warning">squad</button>
-            </div>
-        </div>
+
     </div>
-    <div class="row border">
-        <div class="col-xs-4 border ">
-            <audio controls>
-                <source src="songs/Tell%20Me.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
+    <div class="col-xs-12 file_btn">
+        <h4>Change profile image</h4>
+        <form id="file_upload">
+            <input type="file" name="upload_file">
+        </form>
+        <button type="button" id="submit_img">change image</button>
     </div>
-    <div class="row border">
-        <div class="col-xs-4 fav-animal">
-            <h4>Fav Animal</h4>
-        </div>
-    </div>
+
 </div>
 </body>
 </html>
 
 <script>
-    $('#submit').on('click', function () {
-        send_img_ajax();
+    $('#save_changes_btn').on('click', function () {
+        update_profile();
     });
-    function send_img_ajax(e) {
-        var upload_file_form = $('#file_upload')[0]; //have to use the [0] because is a jQuery element and we later want to use it in javascript
-        var formData = new FormData(upload_file_form); //it is javascript here not jQuery
-        console.log("form data: " , formData);
+    function update_profile(e) {
+        var display_name = $('#display_name').val(); //have to use the [0] because is a jQuery element and we later want to use it in javascript
+        var country = $('#country').val(); //it is javascript here not jQuery
+        var age = $('#age').val();
+        var quote = $('#quote').val();
+        var first_name =$('#first_name').val();
+        var last_name = $("#last_name").val();
+        var email = $("#email").val();
+        var gender = $('#gender').val();
+        console.log(gender);
         $.ajax({
-            url: "file_handler.php",
-            type:'text',
+            url: "edit_profile_handler.php",
+            type: 'json',
             method: "POST",
-            cache: false,
-            mimeType: "multipart/form-data",
-            data: formData,
-            processData: false,
-            contentType: false,
+            data: {
+                display_name: display_name,
+                country:country,
+                age: age,
+                quote: quote,
+                first_name: first_name,
+                last_name:last_name,
+                email:email,
+                gender:gender
+            },
             success: function (response) {
                 console.log("You successfully connected: ", response);
             },

@@ -79,7 +79,7 @@ $_SESSION['url'] = "";
             success: function (response) {
                 console.log("response is success: ", response);
                 if (response.success == true) {
-
+                    populate_user_profile_info();
                     window.location.replace('create_profile.php');
                 }
             },
@@ -89,4 +89,23 @@ $_SESSION['url'] = "";
             }
         })
     }
+    function populate_user_profile_info(){
+        var username = $('#username').val();
+        $.ajax({
+            url: 'user_session.php',
+            method: 'POST',
+            data: {
+                username: username
+            },
+            dataType: 'json',
+            success: function (response) {
+                console.log("get user info is success: ", response);
+            },
+            error: function (response) {
+                console.log("there was an error: ", response);
+//                $('<div>').addClass("text-danger").text("Invalid code").appendTo('#error-message');
+            }
+        })
+    }
+    
 </script>
