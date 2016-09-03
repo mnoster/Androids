@@ -71,9 +71,10 @@ if (empty($_SESSION)) {
             <h4>Country: </h4><input id="country" placeholder="<?= $_SESSION['country'] ?>">
             <h4>Quote: </h4><input id="quote" placeholder="<?= $_SESSION['quote'] ?>">
             <h4>Gender: </h4>
-            <select>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
+            <select id="gender">
+                <option></option>
+                <option value="Man">Man</option>
+                <option value="Woman">Woman</option>
             </select>
             <h4>First Name: </h4><input id="first_name" placeholder="<?= $_SESSION['first_name'] ?>">
             <h4>Last Name: </h4><input id="last_name" placeholder="<?= $_SESSION['last_name'] ?>">
@@ -107,7 +108,8 @@ if (empty($_SESSION)) {
         var first_name =$('#first_name').val();
         var last_name = $("#last_name").val();
         var email = $("#email").val();
-//        var gender = $('');
+        var gender = $('#gender').val();
+        console.log(gender);
         $.ajax({
             url: "edit_profile_handler.php",
             type: 'json',
@@ -119,7 +121,8 @@ if (empty($_SESSION)) {
                 quote: quote,
                 first_name: first_name,
                 last_name:last_name,
-                email:email
+                email:email,
+                gender:gender
             },
             success: function (response) {
                 console.log("You successfully connected: ", response);

@@ -27,8 +27,7 @@ if(empty($_POST['country'])){
 };
 if(empty($_POST['first_name'])){
     $first_name =mysqli_real_escape_string($conn,$_SESSION['first_name']);
-}
-else{
+}else{
     $first_name =mysqli_real_escape_string($conn,$_POST['first_name']);
 };
 if(empty($_POST['last_name'])){
@@ -38,15 +37,17 @@ if(empty($_POST['last_name'])){
 };
 if(empty($_POST['quote'])){
     $quote =mysqli_real_escape_string($conn,$_SESSION['quote']);
-}
-else{
+}else{
     $quote =mysqli_real_escape_string($conn,$_POST['quote']);
-
 };
-//$gender =mysqli_real_escape_string($conn,$_POST['gender']);
+if(empty($gender)){
+    $gender =mysqli_real_escape_string($conn,$_SESSION['gender']);
+}else{
+    $gender =mysqli_real_escape_string($conn,$_POST['gender']);
+}
 $output = [];
 
-$query = "UPDATE users SET display_name ='$display_name', email='$email', age='$age', country='$country', first_name='$first_name', last_name='$last_name', quote='$quote'
+$query = "UPDATE users SET display_name ='$display_name', email='$email', age='$age', country='$country', first_name='$first_name', last_name='$last_name', quote='$quote', gender='$gender'
           WHERE username = '$username'";
 
 mysqli_query($conn,$query);

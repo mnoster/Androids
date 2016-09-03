@@ -78,7 +78,6 @@ $_SESSION['url'] = "";
             dataType: 'json',
             success: function (response) {
                 console.log("response is success: ", response);
-
                 if (response.success == true) {
                     populate_user_profile_info();
                     window.location.replace('create_profile.php');
@@ -101,9 +100,6 @@ $_SESSION['url'] = "";
             dataType: 'json',
             success: function (response) {
                 console.log("get user info is success: ", response);
-//                if (response.success == true) {
-//                    window.location.replace('create_profile.php');
-//                }
             },
             error: function (response) {
                 console.log("there was an error: ", response);

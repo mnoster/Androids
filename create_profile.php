@@ -44,7 +44,7 @@ if(empty($_SESSION)) {
                         <li><a href="edit_profile.php">edit profile</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="user_list.php">User List</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="secret.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -69,7 +69,7 @@ if(empty($_SESSION)) {
 <!--            <button type="button" id="submit" >submit</button>-->
         </div>
         <div class="col-xs-3 border">
-            <div id="display_name"><h2><?=$_SESSION['username']?></h2></div>
+            <div id="display_name"><h2><?=$_SESSION['display_name']?></h2></div>
             <div id="location">location</div>
             <div id="quote"><?=$_SESSION['quote']?></div>
         </div>
@@ -83,7 +83,7 @@ if(empty($_SESSION)) {
     <div class="row border">
         <div class="col-xs-4 border ">
             <audio controls>
-                <source src="<?$_SESSION['user_song']?>" type="audio/mpeg">
+                <source src="<?=$_SESSION['user_song']?>" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
         </div>
