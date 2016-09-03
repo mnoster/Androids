@@ -68,12 +68,17 @@ if (empty($_SESSION)) {
     <div class="row edit_profile_row">
         <div class="col-xs-2 border">
             <h4>Display Name: </h4><input id="display_name" placeholder="<?= $_SESSION['display_name'] ?>">
-            <h4>Location: </h4><input id="location" placeholder="<?= $_SESSION['location'] ?>">
+            <h4>Country: </h4><input id="location" placeholder="<?= $_SESSION['country'] ?>">
             <h4>Quote: </h4><input id="quote" placeholder="<?= $_SESSION['quote'] ?>">
-            <h4>Gender: </h4><input id="gender" placeholder="<?= $_SESSION['gender'] ?>">
+            <h4>Gender: </h4>
+            <select>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
             <h4>First Name: </h4><input id="first_name" placeholder="<?= $_SESSION['first_name'] ?>">
             <h4>Last Name: </h4><input id="last_name" placeholder="<?= $_SESSION['last_name'] ?>">
             <h4>Email: </h4><input id="email" placeholder="<?= $_SESSION['email'] ?>">
+            <h4>Age: </h4><input id="age" placeholder="<?= $_SESSION['age'] ?>">
             <button class="btn" id="save_changes_btn">save changes</button>
         </div>
 
