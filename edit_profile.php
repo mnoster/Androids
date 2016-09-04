@@ -107,17 +107,17 @@ if (empty($_SESSION)) {
     <div class="row change-img-row">
         <button class="btn btn-warning" id="submit_img">change profile image</button>
     </div>
-<!--    <div class="row change-img-row">-->
-<!--        <h4>Change background image</h4>-->
-<!--        <div class="col-xs-12 file_btn">-->
-<!--            <form id="file_upload">-->
-<!--                <input type="file" name="upload_file" id="upload-img-file">-->
-<!--            </form>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="row change-img-row">-->
-<!--        <button class="btn btn-info" id="submit_img">change background image</button>-->
-<!--    </div>-->
+    <div class="row change-img-row">
+        <h4>Change background image</h4>
+        <div class="col-xs-12 file_btn">
+            <form id="background_img_file_upload">
+                <input type="file" name="upload_file" id="upload-background-img-file">
+            </form>
+        </div>
+    </div>
+    <div class="row change-img-row">
+        <button class="btn btn-info" id="submit_background_img">change background image</button>
+    </div>
 <!--    <div class="row change-img-row">-->
 <!--        <h4>Change profile song</h4>-->
 <!--        <div class="col-xs-12 file_btn">-->
