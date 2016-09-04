@@ -20,6 +20,7 @@ function update_profile(e) {
     var last_name = $("#last_name").val();
     var email = $("#email").val();
     var gender = $('#gender').val();
+    var state= $('#state').val();
     // console.log(gender);
     $.ajax({
         url: "edit_profile_handler.php",
@@ -28,6 +29,7 @@ function update_profile(e) {
         data: {
             display_name: display_name,
             country: country,
+            stae:state,
             age: age,
             quote: quote,
             first_name: first_name,

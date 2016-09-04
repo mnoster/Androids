@@ -67,19 +67,20 @@ if (empty($_SESSION)) {
 <div class="container edit_profile_container ">
     <h2>Edit Profile</h2>
     <div class="row edit_profile_row">
-        <div class="col-xs-11 border">
-            <h4>Display Name: </h4><input id="display_name" placeholder="<?= $_SESSION['display_name'] ?>">
-            <h4>Country: </h4><input id="country" placeholder="<?= $_SESSION['country'] ?>">
-            <h4>Quote: </h4><input id="quote" placeholder="<?= $_SESSION['quote'] ?>">
+        <div class="col-xs-11">
+            <h4>Display Name: </h4><input class="inputs" id="display_name" placeholder="<?= $_SESSION['display_name'] ?>">
+            <h4>Country: </h4><input class="inputs"  id="country" placeholder="<?= $_SESSION['country'] ?>">
+            <h4>State: </h4><input class="inputs" id="state" placeholder="<?= $_SESSION['state'] ?>">
+            <h4>Quote: </h4><input class="inputs" id="quote" placeholder="<?= $_SESSION['quote'] ?>">
             <h4>Gender: </h4>
-            <select id="gender">
+            <select id="gender" class="inputs" >
                 <option></option>
                 <option value="Man">Man</option>
                 <option value="Woman">Woman</option>
             </select>
-            <h4>First Name: </h4><input id="first_name" placeholder="<?= $_SESSION['first_name'] ?>">
-            <h4>Last Name: </h4><input id="last_name" placeholder="<?= $_SESSION['last_name'] ?>">
-            <h4>Email: </h4><input id="email" placeholder="<?= $_SESSION['email'] ?>">
+            <h4>First Name: </h4><input class="inputs" id="first_name" placeholder="<?= $_SESSION['first_name'] ?>">
+            <h4>Last Name: </h4><input class="inputs" id="last_name" placeholder="<?= $_SESSION['last_name'] ?>">
+            <h4>Email: </h4><input class="inputs" id="email" placeholder="<?= $_SESSION['email'] ?>">
             <h4>Age: <span class="pull-right glyphicon glyphicon-download btn-to-bottom"></span> </h4><input id="age" placeholder="<?= $_SESSION['age'] ?>">
 
         </div>

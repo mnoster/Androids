@@ -71,7 +71,7 @@ if(empty($_SESSION)) {
         </div>
         <div class="col-xs-3 border">
             <div id="display_name"><h2><?=$_SESSION['display_name']?></h2></div>
-            <div id="location">location</div>
+            <div id="country"><?=$_SESSION["country"]?></div>
             <div id="quote"><?=$_SESSION['quote']?></div>
         </div>
         <div class="col-xs-5 border">
