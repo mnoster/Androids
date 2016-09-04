@@ -54,7 +54,7 @@ mysqli_query($conn,$query);
 
 
 $rows_affected = mysqli_affected_rows($conn);
-//print($rows_affected);
+//print("this is username: " . $username);
 
 
 

@@ -20,10 +20,10 @@ function update_profile(e) {
     var last_name = $("#last_name").val();
     var email = $("#email").val();
     var gender = $('#gender').val();
-    console.log(gender);
+    // console.log(gender);
     $.ajax({
         url: "edit_profile_handler.php",
-        type: 'json',
+        dataType: 'json',
         method: "POST",
         data: {
             display_name: display_name,
@@ -36,10 +36,13 @@ function update_profile(e) {
             gender: gender
         },
         success: function (response) {
-            console.log("You successfully connected: ", response);
-            if(response.messaage == "success"){
+            // console.log("You successfully connected: ", response);
+            console.log("username:" , response.username);// username is undefined at this spot
+
+            if(response.message == "success"){
                 var username = response.username;
                 populate_user_profile_info(username);
+                window.location.replace('create_profile.php');
             }
         },
         error: function (response) {
