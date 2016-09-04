@@ -19,6 +19,7 @@ if (empty($_SESSION)) {
     <script src="edit_profile.js"></script>
     <script src="login_script.js"></script>
     <script src="user_list.js"></script>
+    <script src="img-file.js"></script>
 
 <body style="background-color:black">
 <nav class="navbar navbar-inverse">
@@ -98,48 +99,44 @@ if (empty($_SESSION)) {
     <div class="row change-img-row">
         <h4>Change profile image</h4>
         <div class="col-xs-12 file_btn">
-            <form id="file_upload">
+            <form id="img_file_upload">
                 <input type="file" name="upload_file" id="upload-img-file">
             </form>
         </div>
     </div>
     <div class="row change-img-row">
-        <button class="btn btn-info" id="submit_img">change image</button>
+        <button class="btn btn-warning" id="submit_img">change profile image</button>
     </div>
-    <div class="row change-img-row">
-
-        <h4>Change background image</h4>
-        <div class="col-xs-12 file_btn">
-            <form id="file_upload">
-                <input type="file" name="upload_file" id="upload-img-file">
-            </form>
-        </div>
-    </div>
-    <div class="row change-img-row">
-        <button class="btn btn-info" id="submit_img">change background image</button>
-    </div>
-    <div class="row change-img-row">
-        <h4>Change background image</h4>
-        <div class="col-xs-12 file_btn">
-            <form id="file_upload">
-                <input type="file" name="upload_file" id="upload-img-file">
-            </form>
-        </div>
-    </div>
-    <div class="row change-img-row">
-        <button class="btn btn-info" id="submit_img">change background image</button>
-    </div>
-    <div class="row change-img-row">
-        <h4>Change profile song</h4>
-        <div class="col-xs-12 file_btn">
-            <form id="file_upload">
-                <input type="file" name="upload_file" id="upload-img-file">
-            </form>
-        </div>
-    </div>
-    <div class="row change-img-row bottom-row">
-        <button class="btn btn-info" id="submit_img">change background image</button>
-    </div>
+<!--    <div class="row change-img-row">-->
+<!--        <h4>Change background image</h4>-->
+<!--        <div class="col-xs-12 file_btn">-->
+<!--            <form id="file_upload">-->
+<!--                <input type="file" name="upload_file" id="upload-img-file">-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row change-img-row">-->
+<!--        <button class="btn btn-info" id="submit_img">change background image</button>-->
+<!--    </div>-->
+<!--    <div class="row change-img-row">-->
+<!--        <h4>Change profile song</h4>-->
+<!--        <div class="col-xs-12 file_btn">-->
+<!--            <form id="file_upload">-->
+<!--                <input type="file" name="upload_file" id="upload-img-file">-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row change-img-row">-->
+<!--        <button class="btn btn-warning" id="submit_img">change song</button>-->
+<!--    </div>-->
+<!--    <div class="row change-img-row delete-acct">-->
+<!--        <h3>Delete Account</h3>-->
+<!--        <div class="col-xs-12 file_btn">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row change-img-row bottom-row">-->
+<!--        <button class="btn btn-danger" id="submit_img">DELETE Account</button>-->
+<!--    </div>-->
 
 </div>
 </body>

@@ -144,6 +144,9 @@ body{
 .inputs{
     color:black;
 }
+.delete-acct{
+    margin-top: 25px;
+}
 /*---------------user list-------------------*/
 .user_list_style{
     background: rgba(227, 44, 255, 0.65);
