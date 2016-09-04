@@ -145,3 +145,23 @@ body{
 .inputs{
     color:black;
 }
+/*---------------user list-------------------*/
+.user_list_style{
+    background: rgba(227, 44, 255, 0.65);
+    font-size: 1.3em;
+    color: white;
+}
+.user_img_items{
+    height:50px;
+    width:50px;
+}
+.user_list_items:hover{
+    color:blue;
+    font-size:1.4em;
+}
+#display_user_list{
+    list-style-type: none;
+}
+.user_header-row{
+    color: white;
+}

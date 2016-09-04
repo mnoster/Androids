@@ -9,12 +9,13 @@ if(empty($_SESSION)) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Androids</title>
+    <title>lo-qo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="user_list.js"></script>
 
 <body>
 <nav class="navbar navbar-inverse">
@@ -25,7 +26,7 @@ if(empty($_SESSION)) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href=index.php>Androids</a>
+            <a class="navbar-brand" href=index.php> lo-qo </a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -42,7 +43,7 @@ if(empty($_SESSION)) {
                         <li><a href="edit_profile.php">edit profile</a></li>
                     </ul>
                 </li>
-                <li><a href="user_list_handler.php">User List</a></li>
+                <li id="user_list"><a href="user_list.php">User List</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="secret.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -53,7 +54,6 @@ if(empty($_SESSION)) {
                         <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="login.php">Login</a></li>
-
                     </ul>
                 </li>
             </ul>
@@ -61,7 +61,17 @@ if(empty($_SESSION)) {
     </div>
 </nav>
 <div class="container-fluid">
-    <div class="container profile_container"></div>
+    <div class="container profile_container">
+        <div class="row user_header-row">
+            <h2>User List</h2>
+        </div>
+        <div class="row user_list_style">
+            <ul id="display_user_list">
+
+            </ul>
+        </div>
+
+    </div>
 </div>
 </body>
 </html>
