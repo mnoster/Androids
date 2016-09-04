@@ -22,7 +22,8 @@ function populate_user_list(){
                 var src = response[1].profile_img_path[i];
                 var user_name = response[0].names[i];
                 // $('<li>').appendTo('#display_user_list').html($('<img>').attr("src", response[1].profile_img_path[i]).addClass("user_img_items"));
-                $("#display_user_list").append("<li><img class='user_img_items' src='" + src + "'/>" + user_name + "</li>")
+                $("#display_user_list").append("<li class='img-list-style'><img class='user_img_items' src='" + src + "'/>" + user_name + "</li>");
+
             }
         },
         error: function(response){

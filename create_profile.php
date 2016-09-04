@@ -13,10 +13,11 @@ if(empty($_SESSION)) {
     <meta charset="UTF-8">
     <title>Androids</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="user_list.js"></script>
 
 <body style="background-color:transparent">
 <nav class="navbar navbar-inverse">
@@ -44,7 +45,7 @@ if(empty($_SESSION)) {
                         <li><a href="edit_profile.php">edit profile</a></li>
                     </ul>
                 </li>
-                <li><a href="user_list.php">User List</a></li>
+                <li id="user_list"><a href="user_list.php">User List</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="secret.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -141,4 +142,4 @@ if(empty($_SESSION)) {
             }
         })
     }
-</script>
+</scriptsrc>

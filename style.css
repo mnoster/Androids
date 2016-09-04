@@ -1,5 +1,5 @@
 body{
-    cursor: url("images/imageedit_12_7042320203.png"), auto;
+    /*cursor: url("images/imageedit_12_7042320203.png"), auto;*/
     background-color: black;
 }
 .main-contain{
@@ -109,7 +109,6 @@ body{
     background:url('images/pyramid.jpg') center center no-repeat;
     background-color: black;
     height:95vh;
-
 }
 .edit_profile_row{
     text-align: left;
@@ -154,9 +153,11 @@ body{
 .user_img_items{
     height:50px;
     width:50px;
+    border-radius:40px;
+    margin-right: 5px;
 }
-.user_list_items:hover{
-    color:blue;
+.img-list-style:hover{
+    color: #03ddff;
     font-size:1.4em;
 }
 #display_user_list{
@@ -164,4 +165,9 @@ body{
 }
 .user_header-row{
     color: white;
+}
+.img-list-style{
+    margin:5px 25px 0 -10px;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom:3px;
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Androids</title>
+    <title>lo-qo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
@@ -23,7 +23,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href=index.php>Androids</a>
+            <a class="navbar-brand" href=index.php>lo-qo</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -36,12 +36,15 @@
                         <li><a href="companions.php">connects</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="squad.php">squad</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="edit_profile.php">edit profile</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Contact</a></li>
+                <li id="user_list"><a href="user_list.php">User List</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="secret.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <!--                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Login<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -50,6 +53,7 @@
                         <li><a href="login.php">Login</a></li>
 
                     </ul>
+                </li>
             </ul>
         </div>
     </div>
@@ -58,7 +62,7 @@
     <div class="container main-contain">
         <div class="row">
             <div class="col-xs-12 main-head">
-                <h1>Android Space Chat</h1>
+                <h1>lo-qo</h1>
             </div>
         </div>
     </div>

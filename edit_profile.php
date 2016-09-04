@@ -18,6 +18,8 @@ if (empty($_SESSION)) {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="edit_profile.js"></script>
     <script src="login_script.js"></script>
+    <script src="user_list.js"></script>
+
 <body style="background-color:black">
 <nav class="navbar navbar-inverse">
     <div class="contatiner-fluid">
@@ -45,7 +47,7 @@ if (empty($_SESSION)) {
                         <li><a href="edit_profile.php">edit profile</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Contact</a></li>
+                <li id="user_list"><a href="user_list.php">User List</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="secret.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
