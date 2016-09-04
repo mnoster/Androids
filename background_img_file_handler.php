@@ -14,9 +14,7 @@ if($image_name['extension'] == 'gif'|| $image_name['extension'] == 'jpeg'|| $ima
     $img_name_state = true;
 //    print_r($image_name['extension']);
 }
-if($user_img_file['size'] > 200000){
-//    print('<br>'."File size is too big, 2MB max");
-
+if($user_img_file['size'] > 400000){
     $img_size_state['status'] = false;
     $img_size_state = json_encode($img_size_state);
     print($img_size_state);

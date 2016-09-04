@@ -49,7 +49,7 @@ function change_background_img() {
         contentType: false,
         success: function (response) {
             console.log("You successfully connected: ", response);
-            if(response.status == false){
+            if(response == {"status":false}){
                 $("#img_file_upload").append('<span>').text("image size too big");
             }
         },
