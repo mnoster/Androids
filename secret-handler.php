@@ -20,6 +20,7 @@ if($rows_affected > 0){
 }else{
     $output['message'] = 'wrong code';
     $output['success'] = false;
+    $output = json_encode($output);
     print($output);
 }
 ?>

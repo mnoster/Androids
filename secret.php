@@ -37,9 +37,9 @@
     <div class="login-inner">
         <input id="secret" type="password" class="form-control" required="" autofocus >
         <br>
-        <button class="btn-primary">secret</button>
+        <button class="btn-primary secret">secret</button>
     </div>
-    <div id="error-message"></div>
+
 </div>
 </body>
 </html>
@@ -49,6 +49,7 @@
     });
     function check_secret(){
         var secret = $('#secret').val();
+        console.log("secret: " , secret);
         $.ajax({
             url:'secret-handler.php',
             method: 'POST',
@@ -61,10 +62,13 @@
                 if(response.success == true){
                     window.location.replace('register_user.php');
                 }
+                else{
+                    $('.login-inner').append($('<div>').addClass("text-danger").text("Invalid code"));
+
+                }
             },
             error: function(response){
                 console.log("there was an error: " , response);
-                $('<div>').addClass("text-danger").text("Invalid code").appendTo('#error-message');
             }
         })
     }

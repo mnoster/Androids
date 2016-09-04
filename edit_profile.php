@@ -16,8 +16,8 @@ if (empty($_SESSION)) {
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
+    <script src="edit_profile.js"></script>
+    <script src="login_script.js"></script>
 <body style="background-color:black">
 <nav class="navbar navbar-inverse">
     <div class="contatiner-fluid">
@@ -141,48 +141,3 @@ if (empty($_SESSION)) {
 </div>
 </body>
 </html>
-
-<script>
-    $('#save_changes_btn').on('click', function () {
-        update_profile();
-    });
-    $('.btn-to-bottom').on('click',function(){
-        $('html,body').animate({
-                scrollTop: $(".change-img-row").offset().top},
-            'slow');
-    });
-
-    function update_profile(e) {
-        var display_name = $('#display_name').val(); //have to use the [0] because is a jQuery element and we later want to use it in javascript
-        var country = $('#country').val(); //it is javascript here not jQuery
-        var age = $('#age').val();
-        var quote = $('#quote').val();
-        var first_name = $('#first_name').val();
-        var last_name = $("#last_name").val();
-        var email = $("#email").val();
-        var gender = $('#gender').val();
-        console.log(gender);
-        $.ajax({
-            url: "edit_profile_handler.php",
-            type: 'json',
-            method: "POST",
-            data: {
-                display_name: display_name,
-                country: country,
-                age: age,
-                quote: quote,
-                first_name: first_name,
-                last_name: last_name,
-                email: email,
-                gender: gender
-            },
-            success: function (response) {
-                console.log("You successfully connected: ", response);
-            },
-            error: function (response) {
-                console.log("There was an error: ", response);
-            }
-        })
-    }
-</script>
-

@@ -5,9 +5,10 @@
     <title>Androids</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="register_user.js"></script>
 <body>
 <nav class="navbar navbar-inverse">
     <div class="contatiner-fluid">
@@ -51,45 +52,3 @@
 </div>
 </body>
 </html>
-<script>
-    $(document).on('click', "#create_user", function () {
-        create_user();
-    });
-    function create_user() {
-        var username = $('#username').val();
-        console.log(username);
-        var password = $('#password').val();
-        console.log(password);
-        var password2 = $('#password2').val();
-        console.log(password2);
-        var email = $('#email').val();
-        console.log(email);
-        
-        $.ajax({
-            url: 'register_user_handler.php',
-            method: 'POST',
-            data: {
-                username: username,
-                password: password,
-                password2: password2,
-                email:email
-            },
-            dataType: 'json',
-            success: function (response) {
-                console.log("response is success: ", response);
-                if(response.message == "You typed the password incorrectly"){
-                    $('<div>').addClass("text-danger").text("Username or email is already been used").appendTo('#error-message');
-                    return;
-                }
-                if (response.success == true) {
-                    window.location.replace('login.php');
-                }
-            },
-            error: function (response) {
-                console.log("there was an error: ", response);
-                $('<div>').addClass("text-danger").text("Username or email is already been used").appendTo('#error-message');
-            }
-        })
-    }
-
-</script>

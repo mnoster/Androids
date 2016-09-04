@@ -54,7 +54,7 @@ mysqli_query($conn,$query);
 
 
 $rows_affected = mysqli_affected_rows($conn);
-print($rows_affected);
+//print($rows_affected);
 
 
 
@@ -62,6 +62,7 @@ if($rows_affected > 0){
     $_SESSION['username'] = $username;
     $output['message'] = 'success';
     $output['success'] = true;
+    $output['username'] = $username;
     $output = json_encode($output);
     print($output);
 }else{
