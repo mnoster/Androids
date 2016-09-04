@@ -12,12 +12,13 @@ if (empty($_SESSION)) {
     <meta charset="UTF-8">
     <title>Androids</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<body>
+
+<body style="background-color:black">
 <nav class="navbar navbar-inverse">
     <div class="contatiner-fluid">
         <div class="navbar-header navigation-titles">
@@ -66,7 +67,7 @@ if (empty($_SESSION)) {
 <div class="container edit_profile_container ">
     <h2>Edit Profile</h2>
     <div class="row edit_profile_row">
-        <div class="col-xs-2 border">
+        <div class="col-xs-11 border">
             <h4>Display Name: </h4><input id="display_name" placeholder="<?= $_SESSION['display_name'] ?>">
             <h4>Country: </h4><input id="country" placeholder="<?= $_SESSION['country'] ?>">
             <h4>Quote: </h4><input id="quote" placeholder="<?= $_SESSION['quote'] ?>">
@@ -79,17 +80,62 @@ if (empty($_SESSION)) {
             <h4>First Name: </h4><input id="first_name" placeholder="<?= $_SESSION['first_name'] ?>">
             <h4>Last Name: </h4><input id="last_name" placeholder="<?= $_SESSION['last_name'] ?>">
             <h4>Email: </h4><input id="email" placeholder="<?= $_SESSION['email'] ?>">
-            <h4>Age: </h4><input id="age" placeholder="<?= $_SESSION['age'] ?>">
+            <h4>Age: <span class="pull-right glyphicon glyphicon-download btn-to-bottom"></span> </h4><input id="age" placeholder="<?= $_SESSION['age'] ?>">
+
+        </div>
+    </div>
+    <div class="row to-bottom">
+        <div class="col-xs-3">
             <button class="btn" id="save_changes_btn">save changes</button>
         </div>
+        <div class="col-xs-8">
 
+        </div>
     </div>
-    <div class="col-xs-12 file_btn">
+    <div class="row change-img-row">
         <h4>Change profile image</h4>
-        <form id="file_upload">
-            <input type="file" name="upload_file">
-        </form>
-        <button type="button" id="submit_img">change image</button>
+        <div class="col-xs-12 file_btn">
+            <form id="file_upload">
+                <input type="file" name="upload_file" id="upload-img-file">
+            </form>
+        </div>
+    </div>
+    <div class="row change-img-row">
+        <button class="btn btn-info" id="submit_img">change image</button>
+    </div>
+    <div class="row change-img-row">
+
+        <h4>Change background image</h4>
+        <div class="col-xs-12 file_btn">
+            <form id="file_upload">
+                <input type="file" name="upload_file" id="upload-img-file">
+            </form>
+        </div>
+    </div>
+    <div class="row change-img-row">
+        <button class="btn btn-info" id="submit_img">change background image</button>
+    </div>
+    <div class="row change-img-row">
+        <h4>Change background image</h4>
+        <div class="col-xs-12 file_btn">
+            <form id="file_upload">
+                <input type="file" name="upload_file" id="upload-img-file">
+            </form>
+        </div>
+    </div>
+    <div class="row change-img-row">
+        <button class="btn btn-info" id="submit_img">change background image</button>
+    </div>
+    <div class="row change-img-row">
+        <h4>Change profile song</h4>
+        <div class="col-xs-12 file_btn">
+            <form id="file_upload">
+                <input type="file" name="upload_file" id="upload-img-file">
+            </form>
+        </div>
+    </div>
+    <div class="row change-img-row bottom-row">
+        <button class="btn btn-info" id="submit_img">change background image</button>
     </div>
 
 </div>
@@ -100,12 +146,18 @@ if (empty($_SESSION)) {
     $('#save_changes_btn').on('click', function () {
         update_profile();
     });
+    $('.btn-to-bottom').on('click',function(){
+        $('html,body').animate({
+                scrollTop: $(".change-img-row").offset().top},
+            'slow');
+    });
+
     function update_profile(e) {
         var display_name = $('#display_name').val(); //have to use the [0] because is a jQuery element and we later want to use it in javascript
         var country = $('#country').val(); //it is javascript here not jQuery
         var age = $('#age').val();
         var quote = $('#quote').val();
-        var first_name =$('#first_name').val();
+        var first_name = $('#first_name').val();
         var last_name = $("#last_name").val();
         var email = $("#email").val();
         var gender = $('#gender').val();
@@ -116,13 +168,13 @@ if (empty($_SESSION)) {
             method: "POST",
             data: {
                 display_name: display_name,
-                country:country,
+                country: country,
                 age: age,
                 quote: quote,
                 first_name: first_name,
-                last_name:last_name,
-                email:email,
-                gender:gender
+                last_name: last_name,
+                email: email,
+                gender: gender
             },
             success: function (response) {
                 console.log("You successfully connected: ", response);

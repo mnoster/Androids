@@ -8,17 +8,17 @@ if(empty($_SESSION)) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  style="background-image:url('<?=$_SESSION['background_image_path']?>'); background-repeat: no-repeat; background-position:center; background-color:black">
 <head>
     <meta charset="UTF-8">
     <title>Androids</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<body>
+<body style="background-color:transparent">
 <nav class="navbar navbar-inverse">
     <div class="contatiner-fluid">
         <div class="navbar-header navigation-titles">
@@ -62,7 +62,8 @@ if(empty($_SESSION)) {
         </div>
     </div>
 </nav>
-<div class="container profile_container" style = "{ background-image : url('<?$_SESSION['background_image_path']?>')}" >
+<div class="container-fluid"  style="background:rgba(251, 253, 255, 0.73)">
+<div class="container profile_container"  style="background:rgba(251, 253, 255, 0.73)">
     <div class="row profile-row">
         <div class="col-xs-4 col-md-3 col-lg-2 border">
             <img id="profile_pic" src="<?=$_SESSION['profile_image_path']?>" height="100" width="100">
@@ -94,10 +95,11 @@ if(empty($_SESSION)) {
         </div>
     </div>
 </div>
-<div class="container profile_container">
+<div class="container profile_info_container">
     <div class="row middle-profile-row">
         <div><h4>Train</h4></div>
     </div>
+</div>
 </div>
 </body>
 </html>

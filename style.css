@@ -31,9 +31,9 @@ body{
     margin-left: 10px;
 }
 
-#sc-search{
-    width:90%
-}
+/*#sc-search{*/
+    /*width:90%*/
+/*}*/
 .w3-spin{
     display: inline-block;
 }
@@ -120,6 +120,25 @@ body{
     margin:10px 8px;
     color:black;
 }
-.file_btn, #file_upload{
+
+#upload-img-file{
+    border:1px solid white;
+    border-radius: 5px;
+}
+.change-img-row{
+ margin-top: 10px;
+
+}
+.to-bottom{
     text-align: right;
+    font-size: 4em;
+}
+#file_upload{
+    display: inline-block;
+}
+.bottom-row{
+    margin-bottom: 5vh;
+}
+.btn-to-bottom{
+    font-size:3em;
 }
