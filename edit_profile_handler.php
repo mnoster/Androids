@@ -50,9 +50,11 @@ if(empty($gender)){
 }else{
     $gender =mysqli_real_escape_string($conn,$_POST['gender']);
 }
-$output = [];
 
-$query = "UPDATE users SET display_name ='$display_name', email='$email', age='$age', country='$country', state='$state', first_name='$first_name', last_name='$last_name', quote='$quote', gender='$gender'
+$full_name = $first_name ." ". $last_name;
+
+
+$query = "UPDATE users SET display_name ='$display_name', email='$email', age='$age', country='$country', state='$state', first_name='$first_name', last_name='$last_name',full_name = '$full_name', quote='$quote', gender='$gender'
           WHERE username = '$username'";
 
 mysqli_query($conn,$query);

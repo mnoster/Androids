@@ -41,6 +41,10 @@ if ($result->num_rows > 0) {
         $_SESSION['user_song']=$row["user_song"];
         $user_info[] = $row["email"];
         $_SESSION["email"]=$row["email"];
+        $user_info[] = $row["state"];
+        $_SESSION["state"]=$row["state"];
+        $user_info[] = $row["full_name"];
+        $_SESSION["full_name"]=$row["full_name"];
 //        echo "username: " . $row["username"]. " profile image: " . $row["quote"]. " " . $row["background_image_path"]. "<br>";
     }
 } else {
