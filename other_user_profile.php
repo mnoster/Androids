@@ -9,15 +9,16 @@ if (empty($_SESSION)) {
 
 <!DOCTYPE html>
 <html lang="en"
-      style="background-image:url('<?= $_SESSION['background_image_path'] ?>'); background-repeat: no-repeat; background-position:center; background-color:black">
+      style="background-image:url('<?= $_SESSION['o_background_image_path'] ?>'); background-repeat: no-repeat; background-position:center; background-color:black">
 <head>
     <meta charset="UTF-8">
-    <title>lo-qo</title>
+    <title>Androids</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--    <script src="other_user.js"></script>-->
     <script src="user_list.js"></script>
     <script src="add_friend.js"></script>
 
@@ -71,12 +72,12 @@ if (empty($_SESSION)) {
     <div class="container profile_container" style="background:rgba(251, 253, 255, 0.73)">
         <div class="row profile-row">
             <div class="col-xs-4 col-md-3 col-lg-2 border">
-                <img id="profile_pic" src="<?= $_SESSION['profile_image_path'] ?>" height="100" width="100">
+                <img id="profile_pic" src="<?= $_SESSION['o_profile_image_path'] ?>" height="100" width="100">
             </div>
             <div class="col-xs-3 border">
-                <div id="display_name"><h2><?= $_SESSION['display_name'] ?></h2></div>
-                <div id="country"><?= $_SESSION["state"] . ", " . $_SESSION['country'] ?></div>
-                <div id="quote"><?= $_SESSION['quote'] ?></div>
+                <div id="display_name"><h2><?= $_SESSION['o_display_name'] ?></h2></div>
+                <div id="country"><?= $_SESSION["o_state"] . ", " . $_SESSION['o_country'] ?></div>
+                <div id="quote"><?= $_SESSION['o_quote'] ?></div>
             </div>
             <div class="col-xs-5 border">
                 <div class="profile-header">
@@ -88,7 +89,7 @@ if (empty($_SESSION)) {
         <div class="row border">
             <div class="col-xs-4 border ">
                 <audio controls>
-                    <source src="<?= $_SESSION['user_song'] ?>" type="audio/mpeg">
+                    <source src="<?= $_SESSION['o_user_song'] ?>" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
             </div>
@@ -107,42 +108,3 @@ if (empty($_SESSION)) {
 </div>
 </body>
 </html>
-
-<script>
-    $('#squad').on('click', function () {
-        add_to_squad();
-    });
-    function add_to_squad(e) {
-        $.ajax({
-            url: "squad_handler.php",
-            type: 'text',
-            method: "POST",
-            success: function (response) {
-                console.log("You successfully connected: ", response);
-                $('#squad').text("remove squad");
-
-            },
-            error: function (response) {
-                console.log("There was an error: ", response);
-            }
-        })
-    }
-    $('#connect').on('click', function () {
-        connect();
-    });
-    function connect(e) {
-        $.ajax({
-            url: "connect_handler.php",
-            type: 'text',
-            method: "POST",
-            success: function (response) {
-                console.log("You successfully connected: ", response);
-                $('#connect').text("remove connect");
-
-            },
-            error: function (response) {
-                console.log("There was an error: ", response);
-            }
-        })
-    }
-    </script>
