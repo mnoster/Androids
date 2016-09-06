@@ -7,6 +7,7 @@ if ($conn->connect_error) {
 
 $name_output = [];
 $img_output = [];
+$username_output= [];
 $output = [];
 
 $query = "SELECT * FROM `users` ORDER BY full_name LIMIT 20";
@@ -18,16 +19,17 @@ $rows_affected = mysqli_affected_rows($conn);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
+        $username_output["username"][] = $row["username"];
         $name_output["names"][] = $row["full_name"];
         $img_output["profile_img_path"][] = $row["profile_image_path"];
     }
 } else {
     echo "0 results";
 }
-
 if($rows_affected > 0){
     $output[] = $name_output;
     $output[] = $img_output;
+    $output[] = $username_output;
     $output = json_encode($output);
     print($output);
 
