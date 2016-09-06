@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Androids</title>
+    <title>lo-qo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
@@ -18,12 +18,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href=index.php>Androids</a>
+            <a class="navbar-brand" href=index.php>lo-qo</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.php">Home</a></li>
-                <li><a href="About.html">About</a></li>
+                <li class="active"><a href="login.php">Home</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -37,9 +36,9 @@
     <div class="login-inner">
         <input id="secret" type="password" class="form-control" required="" autofocus >
         <br>
-        <button class="btn-primary">secret</button>
+        <button class="btn-primary secret">secret</button>
     </div>
-    <div id="error-message"></div>
+
 </div>
 </body>
 </html>
@@ -49,6 +48,7 @@
     });
     function check_secret(){
         var secret = $('#secret').val();
+        console.log("secret: " , secret);
         $.ajax({
             url:'secret-handler.php',
             method: 'POST',
@@ -61,10 +61,13 @@
                 if(response.success == true){
                     window.location.replace('register_user.php');
                 }
+                else{
+                    $('.login-inner').append($('<div>').addClass("text-danger").text("Invalid code"));
+
+                }
             },
             error: function(response){
                 console.log("there was an error: " , response);
-                $('<div>').addClass("text-danger").text("Invalid code").appendTo('#error-message');
             }
         })
     }

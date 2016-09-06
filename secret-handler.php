@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('mysql_connect.php');
 if ($conn->connect_error) {
     die("Connection failed ");
@@ -16,10 +17,12 @@ if($rows_affected > 0){
     $output['message'] = 'success';
     $output['success'] = true;
     $output = json_encode($output);
+    session_destroy();// Destroying All Sessions
     print($output);
 }else{
     $output['message'] = 'wrong code';
     $output['success'] = false;
+    $output = json_encode($output);
     print($output);
 }
 ?>

@@ -1,5 +1,5 @@
 body{
-    cursor: url("images/imageedit_12_7042320203.png"), auto;
+    /*cursor: url("images/imageedit_12_7042320203.png"), auto;*/
     background-color: black;
 }
 .main-contain{
@@ -31,9 +31,9 @@ body{
     margin-left: 10px;
 }
 
-#sc-search{
-    width:90%
-}
+/*#sc-search{*/
+    /*width:90%*/
+/*}*/
 .w3-spin{
     display: inline-block;
 }
@@ -58,11 +58,27 @@ body{
     overflow-y:scroll;
 
 }
+/*------------main profile-------*/
 .profile_container{
     border:1px solid black;
     border-radius: 3px;
     margin-top:10px;
+    background:rgba(251, 253, 255, 0.73)
 }
+.profile_info_container{
+    border:1px solid black;
+    border-radius: 3px;
+    margin-top:2px;
+    background:rgba(251, 253, 255, 0.73)
+}
+.top_info_container{
+    border:1px solid black;
+    color:white;
+    border-radius: 3px;
+    margin-top:2px;
+    background: rgba(0, 0, 0, 0.47)
+}
+
 .profile-row{
     padding-top: 10px;
 }
@@ -75,6 +91,20 @@ body{
 .button-style{
     margin:4px 3px;
 }
+.song-contain{
+    padding-top:10px;
+}
+
+.song-contain>audio {
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .no-margin-xs {
+        margin: 2px;
+    }
+}
+
 /*------login data-------*/
 .login-background{
     background:url('images/pyramid.jpg') center center no-repeat;
@@ -109,7 +139,6 @@ body{
     background:url('images/pyramid.jpg') center center no-repeat;
     background-color: black;
     height:95vh;
-
 }
 .edit_profile_row{
     text-align: left;
@@ -120,6 +149,66 @@ body{
     margin:10px 8px;
     color:black;
 }
-.file_btn, #file_upload{
+
+#upload-img-file{
+    border:1px solid white;
+    border-radius: 5px;
+}
+.change-img-row{
+ margin-top: 10px;
+
+}
+.to-bottom{
     text-align: right;
+    font-size: 4em;
+}
+#file_upload{
+    display: inline-block;
+}
+.bottom-row{
+    margin-bottom: 5vh;
+}
+.btn-to-bottom{
+    font-size:3em;
+}
+.inputs{
+    color:black;
+}
+.delete-acct{
+    margin-top: 25px;
+}
+/*---------------user list-------------------*/
+.user_list_style{
+    background: rgba(227, 44, 255, 0.65);
+    font-size: 1.3em;
+    color: white;
+}
+.user_img_items{
+    height:50px;
+    width:50px;
+    border-radius:40px;
+    margin-right: 5px;
+}
+.img-list-style:hover{
+    color: #03ddff;
+    font-size:1.4em;
+    cursor: pointer;
+}
+#display_user_list{
+    list-style-type: none;
+}
+.user_header-row{
+    color: white;
+}
+.img-list-style{
+    margin:5px 25px 0 -10px;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom:3px;
+
+}
+
+.user_profile_container{
+    border:1px solid black;
+    border-radius: 3px;
+    margin-top:10px;
 }

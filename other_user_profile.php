@@ -9,15 +9,16 @@ if (empty($_SESSION)) {
 
 <!DOCTYPE html>
 <html lang="en"
-      style="background-image:url('<?= $_SESSION['background_image_path'] ?>'); background-repeat: no-repeat; background-position:center; background-color:black">
+      style="background-image:url('<?= $_SESSION['o_background_image_path'] ?>'); background-repeat: no-repeat; background-position:center; background-color:black">
 <head>
     <meta charset="UTF-8">
-    <title>lo-qo</title>
+    <title>Androids</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--    <script src="other_user.js"></script>-->
     <script src="user_list.js"></script>
     <script src="add_friend.js"></script>
 
@@ -68,40 +69,47 @@ if (empty($_SESSION)) {
     </div>
 </nav>
 <div class="container-fluid" style="background:rgba(251, 253, 255, 0.73)">
-    <div class="container profile_container" style="background:rgba(251, 253, 255, 0.73)">
+    <div class="container profile_container" >
         <div class="row profile-row">
-            <div class="col-xs-4 col-md-3 col-lg-2 border">
-                <img id="profile_pic" src="<?= $_SESSION['profile_image_path'] ?>" height="100" width="100">
+            <div class="col-xs-4 col-md-3 col-lg-2 ">
+                <div class="img-container">
+                    <img id="profile_pic" class="img-responsive" src="<?= $_SESSION['o_profile_image_path'] ?>">
+                </div>
             </div>
-            <div class="col-xs-3 border">
-                <div id="display_name"><h2><?= $_SESSION['display_name'] ?></h2></div>
-                <div id="country"><?= $_SESSION["state"] . ", " . $_SESSION['country'] ?></div>
-                <div id="quote"><?= $_SESSION['quote'] ?></div>
+            <div class="col-xs-6 col-sm-3">
+                <div id="display_name"><h2 class="no-margin-xs"><?= $_SESSION['o_display_name'] ?></h2></div>
+                <div id="country"><?= $_SESSION["o_state"] . ", " . $_SESSION['o_country'] ?></div>
+                <div id="quote"><?= $_SESSION['o_quote'] ?></div>
             </div>
-            <div class="col-xs-5 border">
+            <div class="col-xs-10 col-sm-2">
                 <div class="profile-header">
-<!--                    <button id="connect" class="btn btn-primary button-style">connect</button>-->
-<!--                    <button id="squad" class="btn btn-warning button-style">squad</button>-->
+                    <button id="connect" value="<?=$_SESSION['o_ID']?>" class="btn btn-primary button-style">connect</button>
+                    <button id="squad" value="<?=$_SESSION['o_ID']?>" class="btn btn-warning button-style">squad</button>
                 </div>
             </div>
         </div>
         <div class="row border">
-            <div class="col-xs-4 song-contain">
+            <div class="col-xs-12 col-sm-5 song-contain">
                 <audio controls>
-                    <source src="<?= $_SESSION['user_song'] ?>" type="audio/mpeg">
+                    <source src="<?= $_SESSION['o_user_song'] ?>" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
             </div>
         </div>
+
+    </div>
+    <div class="container profile_container">
         <div class="row border">
             <div class="col-xs-4 fav-animal">
-                <h4>Fav Animal</h4>
+                <h4>Connects</h4>
             </div>
         </div>
     </div>
     <div class="container profile_info_container">
-        <div class="row middle-profile-row">
-            <div><h4>Train</h4></div>
+        <div class="row border">
+            <div class="col-xs-4 fav-animal">
+                <h4></h4>
+            </div>
         </div>
     </div>
 </div>

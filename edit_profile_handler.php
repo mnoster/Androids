@@ -25,6 +25,11 @@ if(empty($_POST['country'])){
 }else{
     $country =mysqli_real_escape_string($conn,$_POST['country']);
 };
+if(empty($_POST['state'])){
+    $state =mysqli_real_escape_string($conn,$_SESSION['state']);
+}else{
+    $state =mysqli_real_escape_string($conn,$_POST['state']);
+};
 if(empty($_POST['first_name'])){
     $first_name =mysqli_real_escape_string($conn,$_SESSION['first_name']);
 }else{
@@ -45,16 +50,18 @@ if(empty($gender)){
 }else{
     $gender =mysqli_real_escape_string($conn,$_POST['gender']);
 }
-$output = [];
 
-$query = "UPDATE users SET display_name ='$display_name', email='$email', age='$age', country='$country', first_name='$first_name', last_name='$last_name', quote='$quote', gender='$gender'
+$full_name = $first_name ." ". $last_name;
+
+
+$query = "UPDATE users SET display_name ='$display_name', email='$email', age='$age', country='$country', state='$state', first_name='$first_name', last_name='$last_name',full_name = '$full_name', quote='$quote', gender='$gender'
           WHERE username = '$username'";
 
 mysqli_query($conn,$query);
 
 
 $rows_affected = mysqli_affected_rows($conn);
-print($rows_affected);
+//print("this is username: " . $username);
 
 
 
@@ -62,6 +69,7 @@ if($rows_affected > 0){
     $_SESSION['username'] = $username;
     $output['message'] = 'success';
     $output['success'] = true;
+    $output['username'] = $username;
     $output = json_encode($output);
     print($output);
 }else{
