@@ -6,14 +6,8 @@ if ($conn->connect_error) {
     die("Connection failed ");
 }
 // Storing Session
-$full_name = $_POST['full_name'];
-
-$query_name = "SELECT * FROM `users` WHERE `username`= '$username'";
-
-$result = $conn->query($query);
-while($row = $result->fetch_assoc()) {
-    $user_info[] = $row["username"];
-}
+$username = $_POST['username'];
+$user_info = [];
 
 $query = "SELECT * FROM `users` WHERE `username`= '$username'";
 
@@ -55,11 +49,14 @@ if ($result->num_rows > 0) {
         $_SESSION["ID"]=$row["ID"];
 //        echo "username: " . $row["username"]. " profile image: " . $row["quote"]. " " . $row["background_image_path"]. "<br>";
     }
+    $user_info['status'] = "success";
 } else {
     echo "0 results";
 }
-//print("user song: ") . print_r($_SESSION['user_song'],true);
-$user_info = json_encode($user_info);
-print($user_info)
+if($user_info['status']=='success'){
+    $user_info = json_encode($user_info);
+    print($user_info);  
+}
+
 
 ?>

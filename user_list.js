@@ -30,20 +30,25 @@ function populate_user_list(){
         }
     })
 }
-$('.img-list-style').on('click',function(){
-    var username = $(this).attr("name");
-    console.log("username: " ,username);
+$(document).on('click','.img-list-style',function(){
+    var username = $(this).children(".user_img_items").attr("name");
+    // console.log("username: " ,username);
     go_to_user_profile(username);
 });
 
 function go_to_user_profile(username){
+    console.log("username: " ,username);
     $.ajax({
         url: "other_user_session.php",
         dataType:'json',
         method: "post",
-        data:username,
+        data:{
+            username: username
+        },
         success: function (response){
             console.log("you connected successfully: " , response);
+            
+            
 
         },
         error: function(response){
