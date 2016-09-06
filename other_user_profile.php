@@ -69,17 +69,19 @@ if (empty($_SESSION)) {
     </div>
 </nav>
 <div class="container-fluid" style="background:rgba(251, 253, 255, 0.73)">
-    <div class="container profile_container" style="background:rgba(251, 253, 255, 0.73)">
+    <div class="container profile_container" >
         <div class="row profile-row">
-            <div class="col-xs-4 col-md-3 col-lg-2 border">
-                <img id="profile_pic" src="<?= $_SESSION['o_profile_image_path'] ?>" height="100" width="100">
+            <div class="col-xs-4 col-md-3 col-lg-2 ">
+                <div class="img-container">
+                    <img id="profile_pic" class="img-responsive" src="<?= $_SESSION['o_profile_image_path'] ?>">
+                </div>
             </div>
-            <div class="col-xs-3 border">
-                <div id="display_name"><h2><?= $_SESSION['o_display_name'] ?></h2></div>
+            <div class="col-xs-6 col-sm-3">
+                <div id="display_name"><h2 class="no-margin-xs"><?= $_SESSION['o_display_name'] ?></h2></div>
                 <div id="country"><?= $_SESSION["o_state"] . ", " . $_SESSION['o_country'] ?></div>
                 <div id="quote"><?= $_SESSION['o_quote'] ?></div>
             </div>
-            <div class="col-xs-5 border">
+            <div class="col-xs-10 col-sm-2">
                 <div class="profile-header">
                     <button id="connect" class="btn btn-primary button-style">connect</button>
                     <button id="squad" class="btn btn-warning button-style">squad</button>
@@ -87,22 +89,27 @@ if (empty($_SESSION)) {
             </div>
         </div>
         <div class="row border">
-            <div class="col-xs-4 border ">
+            <div class="col-xs-12 col-sm-5 song-contain">
                 <audio controls>
                     <source src="<?= $_SESSION['o_user_song'] ?>" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
             </div>
         </div>
+
+    </div>
+    <div class="container profile_container">
         <div class="row border">
             <div class="col-xs-4 fav-animal">
-                <h4>Fav Animal</h4>
+                <h4>Connects</h4>
             </div>
         </div>
     </div>
     <div class="container profile_info_container">
-        <div class="row middle-profile-row">
-            <div><h4>Train</h4></div>
+        <div class="row border">
+            <div class="col-xs-4 fav-animal">
+                <h4></h4>
+            </div>
         </div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-$(document).on('click',"#connect",function(){
+$(document).on('mouseup',"#connect",function(){
    add_friend();
     console.log("connect clicked");
 });
@@ -12,13 +12,13 @@ function add_friend(){
         success: function(response){
             console.log("you connected successfully: " , response);
         },
-        error: function(repsonse){
+        error: function(response){
             console.log("there was an error: " , response)
         }
     });
 }
 
-$(document).on('click',"#squad",function(){
+$(document).on('mouseup',"#squad",function(){
     add_squad();
 });
 function add_squad(){

@@ -80,13 +80,13 @@ if (empty($_SESSION)) {
             </div>
             <div class="col-xs-5 border">
                 <div class="profile-header">
-                    <button id="connect" class="btn btn-primary button-style">connect</button>
-                    <button id="squad" class="btn btn-warning button-style">squad</button>
+<!--                    <button id="connect" class="btn btn-primary button-style">connect</button>-->
+<!--                    <button id="squad" class="btn btn-warning button-style">squad</button>-->
                 </div>
             </div>
         </div>
         <div class="row border">
-            <div class="col-xs-4 border ">
+            <div class="col-xs-4 song-contain">
                 <audio controls>
                     <source src="<?= $_SESSION['user_song'] ?>" type="audio/mpeg">
                     Your browser does not support the audio element.
@@ -107,42 +107,3 @@ if (empty($_SESSION)) {
 </div>
 </body>
 </html>
-
-<script>
-    $('#squad').on('click', function () {
-        add_to_squad();
-    });
-    function add_to_squad(e) {
-        $.ajax({
-            url: "squad_handler.php",
-            type: 'text',
-            method: "POST",
-            success: function (response) {
-                console.log("You successfully connected: ", response);
-                $('#squad').text("remove squad");
-
-            },
-            error: function (response) {
-                console.log("There was an error: ", response);
-            }
-        })
-    }
-    $('#connect').on('click', function () {
-        connect();
-    });
-    function connect(e) {
-        $.ajax({
-            url: "connect_handler.php",
-            type: 'text',
-            method: "POST",
-            success: function (response) {
-                console.log("You successfully connected: ", response);
-                $('#connect').text("remove connect");
-
-            },
-            error: function (response) {
-                console.log("There was an error: ", response);
-            }
-        })
-    }
-    </script>

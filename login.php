@@ -7,7 +7,7 @@ $_SESSION['url'] = "";
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Androids</title>
+    <title>lo-qo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
@@ -23,7 +23,7 @@ $_SESSION['url'] = "";
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand">Androids</a>
+            <a class="navbar-brand">lo-qo</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">

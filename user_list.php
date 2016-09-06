@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (empty($_SESSION)) {
+if(empty($_SESSION)) {
     header("Location: login.php"); /* Redirect browser, this function is not working properly */
     exit();
 }
@@ -32,8 +32,7 @@ if (empty($_SESSION)) {
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php">Chat</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">ME<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ME<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="create_profile.php">profile</a></li>
                         <li role="separator" class="divider"></li>
@@ -50,9 +49,7 @@ if (empty($_SESSION)) {
                 <li><a href="secret.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                 <!--                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Login<span
-                            class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Login<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                         <li role="separator" class="divider"></li>
@@ -64,7 +61,7 @@ if (empty($_SESSION)) {
     </div>
 </nav>
 <div class="container-fluid">
-    <div class="container profile_container">
+    <div class="container user_profile_container">
         <div class="row user_header-row">
             <h2>User List</h2>
         </div>
