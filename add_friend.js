@@ -4,11 +4,15 @@ $(document).on('mouseup',"#connect",function(){
 });
 
 function add_friend(){
-    
+    var friend_ID = $('#connect').attr('value');
+    console.log("friend id: ", friend_ID);
     $.ajax({
         url:"add_friend_handler.php",
         method: 'post',
         dataType: 'json',
+        data: {
+            friend_ID: friend_ID
+        },
         success: function(response){
             console.log("you connected successfully: " , response);
         },
