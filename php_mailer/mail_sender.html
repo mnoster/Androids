@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mailer PHP prototype</title>
+	<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+</head>
+<body>
+	<form>
+		<input id="name" placeholder="your name"><br>
+		<input id="email" placeholder="your email address"><br>
+		<input id="subject" placeholder="Subject"><br>
+		<textarea  id="textarea" placeholder="Your message"></textarea>
+	</form>
+	<button id="submit" value="submit">Send Mail</button>
+
+</body>
+</html>
+<script>
+	$(document).on('click','#submit',function(){
+		mailer();
+	});
+	function mailer(){
+		var name = $("#name").val();
+		console.log("name: " , name);
+		var email = $("#email").val();
+		console.log("email: " ,email);
+		var subject = $('#subject').val();
+		console.log("subject: " , subject);
+		var content = $('#textarea').val();
+		console.log("content: " ,content);
+		$.ajax({
+			url: 'mail_handler.php',
+			method: 'post',
+			dataType:'text',
+			data: {
+				name:name,
+				email:email,
+				subject:subject,
+				content:content
+			},
+			success: function(response){
+//				console.log("connection was success: " , response);
+			},
+			error: function(response){
+				console.log("there was an error: " ,response);
+			}
+		})
+	}
+</script>
