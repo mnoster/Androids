@@ -26,6 +26,8 @@ body{
     border-radius: 3px;
     height: 40vh;
     margin-top: 10px;
+    background: rgba(251, 253, 255, 0.73);
+
 }
 #main-info{
     margin-left: 10px;

@@ -34,6 +34,7 @@ $(document).on('click','.img-list-style',function(){
     var username = $(this).children(".user_img_items").attr("name");
     // console.log("username: " ,username);
     go_to_user_profile(username);
+
 });
 
 function go_to_user_profile(username){
@@ -44,6 +45,28 @@ function go_to_user_profile(username){
         method: "post",
         data:{
             username: username
+        },
+        success: function (response){
+            console.log("you connected successfully: " , response[12]);
+            // if(response.status == "success"){
+                populate_profile_friends(response[12]);
+            //     window.location.replace("other_user_profile.php");
+            //
+            // }
+        },
+        error: function(response){
+            console.log("there was an error: ", response );
+        }
+    })
+}
+function populate_profile_friends(ID){
+    console.log("ID: " ,ID);
+    $.ajax({
+        url: "display_friends_handler.php",
+        dataType:'json',
+        method: "post",
+        data:{
+            ID: ID
         },
         success: function (response){
             console.log("you connected successfully: " , response);
