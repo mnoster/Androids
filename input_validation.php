@@ -2,7 +2,7 @@
 
 $validation = [
     'name' => [
-            'slashcheck'=>true, 'htmlcheck' =>true, 'regex' => /[a-zA-Z0-9]{3,50}/
+            'slashcheck'=>true, 'htmlcheck' =>true, 'regex' => '/[a-zA-Z0-9]{3,50}/'
     ],
     'age' => ['int_cast'=>true]
 ];

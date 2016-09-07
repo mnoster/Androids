@@ -86,7 +86,7 @@ if (empty($_SESSION)) {
             </div>
         </div>
         <div class="row border">
-            <div class="col-xs-4 song-contain">
+            <div class="col-xs-12 col-sm-4 col-md-4 song-contain">
                 <audio controls>
                     <source src="<?= $_SESSION['user_song'] ?>" type="audio/mpeg">
                     Your browser does not support the audio element.

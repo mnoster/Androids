@@ -111,7 +111,7 @@ body{
     height:90vh;
 
 }
-.login-inner{
+.login-inner, .contact-contain{
     background: rgba(251, 253, 255, 0.73);
     text-align: center;
     text-shadow: #dccdff 2px 2px;
@@ -211,4 +211,8 @@ body{
     border:1px solid black;
     border-radius: 3px;
     margin-top:10px;
+}
+/*----------contact page---------*/
+.contact-inner{
+    margin-top :30px;
 }
