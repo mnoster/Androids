@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
         $output['current_friend'][] = $row['friend_1'];
 
     };
-
+    $output['status'] = 'success';
     $output = json_encode($output);
     print($output);
 }

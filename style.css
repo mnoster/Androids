@@ -206,7 +206,7 @@ body{
     margin:5px 25px 0 -10px;
     border-bottom: 1px solid #eaeaea;
     padding-bottom:3px;
-
+    list-style-type:none;
 }
 
 .user_profile_container{
@@ -217,4 +217,8 @@ body{
 /*----------contact page---------*/
 .contact-inner{
     margin-top :30px;
+}
+/*-------other user profile-------*/
+.friends-contain{
+    text-align: left;
 }

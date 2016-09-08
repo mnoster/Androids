@@ -101,8 +101,8 @@ if (empty($_SESSION)) {
 
     <div class="container profile_info_container">
         <div class="row middle-profile-row">
-            <div class="col-xs-12">
-                <h4>Connects</h4>
+            <h4>Connects</h4>
+            <div class="col-xs-12 friends-contain">
                 <ul class="profile-friends">
                     
                 </ul>
