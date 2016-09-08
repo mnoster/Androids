@@ -24,41 +24,22 @@ $result = mysqli_query($conn, $query);
 $rows_affected = mysqli_affected_rows($conn);
 
 if ($result->num_rows < 0) {
-    $output['message'][]='this user has no friends';
+    $output['message'][] = 'this user has no friends';
     $output = json_encode($output);
     print($output);
 
 };
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-print_r($row);
+        $output['full_name'][] = $row['full_name'];
+        $output["profile_image_path"][] = $row['profile_image_path'];
+        $output['status'][] = $row['status'];
+        $output['friend_ID'][] = $row['ID'];
+        $output['current_friend'][] = $row['friend_1'];
+
     };
-//    print_r($friend_ID_array['friend_array']);
-//    print($row);
+
+    $output = json_encode($output);
+    print($output);
 }
-
-
-//    while($row = $result->fetch_assoc()) {
-//        $username_output["username"][] = $row["username"];
-//        $name_output["names"][] = $row["full_name"];
-//        $img_output["profile_img_path"][] = $row["profile_image_path"];
-//    }
-
-
-//else {
-//    echo "0 results";
-//}
-//if($rows_affected > 0){
-//    $output[] = $name_output;
-//    $output[] = $img_output;
-//    $output[] = $username_output;
-//    $output = json_encode($output);
-//    print($output);
-//
-//}else{
-//    $name_output['message'] = 'could not populate friend list';
-//    $name_output['success'] = false;
-//    $name_output = json_encode($name_output);
-//    print($name_output);
-//}
-    ?>
+?>
