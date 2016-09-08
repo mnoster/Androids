@@ -11,7 +11,7 @@ function populate_user_list(){
         dataType:'json',
         method: "post",
         success: function (response){
-            console.log("you connected successfully: " , response);
+            // console.log("you connected successfully: " , response);
             for(var i = 0; i<response[1].profile_img_path.length; i++){
                 var username = response[2].username[i];
                 var src = response[1].profile_img_path[i];
@@ -47,31 +47,10 @@ function go_to_user_profile(username){
             username: username
         },
         success: function (response){
-            console.log("you connected successfully: " , response[12]);
-            // if(response.status == "success"){
-                populate_profile_friends(response[12]);
-            //     window.location.replace("other_user_profile.php");
-            //
-            // }
-        },
-        error: function(response){
-            console.log("there was an error: ", response );
-        }
-    })
-}
-function populate_profile_friends(ID){
-    console.log("ID: " ,ID);
-    $.ajax({
-        url: "display_friends_handler.php",
-        dataType:'json',
-        method: "post",
-        data:{
-            ID: ID
-        },
-        success: function (response){
-            console.log("you connected successfully: " , response);
+            // console.log("you connected successfully: " , response[12]);
             if(response.status == "success"){
-                window.location.replace("other_user_profile.php")
+                window.location.replace("other_user_profile.php");
+
             }
         },
         error: function(response){
