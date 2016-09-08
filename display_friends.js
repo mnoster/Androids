@@ -10,7 +10,7 @@ function populate_profile_friends(){
     var user_obj = {};
     $.ajax({
         url: "display_friends_handler.php",
-        dataType:'json',
+        // dataType:'json',
         method: "post",
         success: function (response){
             console.log("you connected successfully: " , response);
