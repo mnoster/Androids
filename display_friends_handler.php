@@ -28,7 +28,7 @@ if ($result->num_rows > 0) {
        };
 //    print(count($friend_ID_array['friend_array']));
         for( $i = 0; $i < count($friend_ID_array['friend_array']); $i++){
-            
+            $query_friends = "SELECT * FROM friends WHERE friend_1 = '$friend_ID' AND status = '2' LIMIT 10";
     };
 
 
