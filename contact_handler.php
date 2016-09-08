@@ -1,8 +1,9 @@
 <?php
+ob_start();
 require_once('email_config.php');
 require('phpmailer/PHPMailer/PHPMailerAutoload.php');
 $mail = new PHPMailer;
-$mail->SMTPDebug = 3;                               // Enable verbose debug output
+$mail->SMTPDebug = 0;                               // Enable verbose debug output
 
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
@@ -36,11 +37,23 @@ $mail->isHTML(true);                                  // Set email format to HTM
 $mail->Subject = $_POST['subject'];
 $mail->Body    = htmlentities($_POST['content']);
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+$output = [
+    'success'=> false
+];
+
 
 if(!$mail->send()) {
-    echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
+    $output['message'] = 'message not sent';
+
 } else {
-    echo json_encode('Message has been sent');
+    $output['success'] = true;
+    $output['message'] = 'Message has been sent';
+
 }
+$debug = ob_get_contents();
+ob_end_clean();
+$output['debug'] = $debug;
+$json_output = json_encode($output);
+print($json_output);
+
 ?>

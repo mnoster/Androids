@@ -4,7 +4,6 @@ if (empty($_SESSION)) {
     header("Location: login.php"); /* Redirect browser, this function is not working properly */
     exit();
 }
-//print_r($_SESSION['background-image-path']);
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +18,7 @@ if (empty($_SESSION)) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!--    <script src="other_user.js"></script>-->
+    <script src="display_friends.js"></script>
     <script src="user_list.js"></script>
     <script src="add_friend.js"></script>
 
@@ -98,17 +98,14 @@ if (empty($_SESSION)) {
         </div>
 
     </div>
-    <div class="container profile_container">
-        <div class="row border">
-            <div class="col-xs-4 fav-animal">
-                <h4>Connects</h4>
-            </div>
-        </div>
-    </div>
+
     <div class="container profile_info_container">
-        <div class="row border">
-            <div class="col-xs-4 fav-animal">
-                <h4></h4>
+        <div class="row middle-profile-row">
+            <h4>Connects</h4>
+            <div class="col-xs-12 friends-contain">
+                <ul class="profile-friends">
+                    
+                </ul>
             </div>
         </div>
     </div>

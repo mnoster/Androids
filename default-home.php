@@ -14,7 +14,7 @@
     <script src="chatbox.js"></script>
 
 </head>
-<body>
+<body style="background-color: black">
 <nav class="navbar navbar-inverse">
     <div class="contatiner-fluid">
         <div class="navbar-header navigation-titles">
@@ -58,7 +58,7 @@
         </div>
     </div>
 </nav>
-<div class="container">
+<div class="container" style="background:rgba(130, 0, 142, 0.73)">
     <div class="container main-contain">
         <div class="row">
             <div class="col-xs-12 main-head">

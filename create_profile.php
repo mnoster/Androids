@@ -19,6 +19,7 @@ if (empty($_SESSION)) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="user_list.js"></script>
+    <script src="contact_script.js"></script>
 <!--    <script src="add_friend.js"></script>-->
 
 <body style="background-color:transparent">
@@ -49,6 +50,7 @@ if (empty($_SESSION)) {
                     </ul>
                 </li>
                 <li id="user_list"><a href="user_list.php">User List</a></li>
+                <li id="contact"><a href="contact.php">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="secret.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -101,7 +103,12 @@ if (empty($_SESSION)) {
     </div>
     <div class="container profile_info_container">
         <div class="row middle-profile-row">
-            <div><h4>Train</h4></div>
+            <div class="col-xs-12">
+                <h4>Connects</h4>
+                <ul class="profile-friends">
+
+                </ul>
+            </div>
         </div>
     </div>
 </div>

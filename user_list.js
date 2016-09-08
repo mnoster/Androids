@@ -11,7 +11,7 @@ function populate_user_list(){
         dataType:'json',
         method: "post",
         success: function (response){
-            console.log("you connected successfully: " , response);
+            // console.log("you connected successfully: " , response);
             for(var i = 0; i<response[1].profile_img_path.length; i++){
                 var username = response[2].username[i];
                 var src = response[1].profile_img_path[i];
@@ -34,6 +34,7 @@ $(document).on('click','.img-list-style',function(){
     var username = $(this).children(".user_img_items").attr("name");
     // console.log("username: " ,username);
     go_to_user_profile(username);
+
 });
 
 function go_to_user_profile(username){
@@ -46,9 +47,10 @@ function go_to_user_profile(username){
             username: username
         },
         success: function (response){
-            console.log("you connected successfully: " , response);
+            // console.log("you connected successfully: " , response[12]);
             if(response.status == "success"){
-                window.location.replace("other_user_profile.php")
+                window.location.replace("other_user_profile.php");
+
             }
         },
         error: function(response){
