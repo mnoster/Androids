@@ -13,7 +13,8 @@ $user_ID = $_SESSION['ID'];
 
 $query = "SELECT m.profile_image_path, m.sender_ID, m.content 
             FROM messages AS m
-            WHERE m.receiver_ID = '$user_ID' 
+            WHERE m.receiver_ID = '$user_ID'
+            ORDER BY m.time DESC
             LIMIT 20";
 
 

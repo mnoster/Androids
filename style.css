@@ -152,7 +152,7 @@ body{
     color:black;
 }
 
-#upload-img-file{
+#upload-img-file, #upload-background-img-file, #upload-song{
     border:1px solid white;
     border-radius: 5px;
 }
@@ -178,6 +178,9 @@ body{
 }
 .delete-acct{
     margin-top: 25px;
+}
+#age{
+    color:black;
 }
 /*---------------user list-------------------*/
 .user_list_style{

@@ -30,6 +30,7 @@ if($song_name_state && $song_size_state){
     $final_name = $target_dir . $song_name['basename'];
     move_uploaded_file($user_song_file['tmp_name'], $final_name );
     include("mysql_connect.php");
+    $final_name = addslashes($final_name);
     $query = "UPDATE users SET user_song = '$final_name'
           WHERE username = '$username'";
     mysqli_query($conn,$query);
