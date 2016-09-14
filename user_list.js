@@ -23,6 +23,13 @@ function populate_user_list(){
                 };
                 // $('<li>').appendTo('#display_user_list').html($('<img>').attr("src", response[1].profile_img_path[i]).addClass("user_img_items"));
                 $("#display_user_list").append("<li class='img-list-style'><img name='"+ user_obj.username +"' class='user_img_items' src='" + user_obj.image + "'/>" + user_obj.name + "</li>");
+                $('.user_img_items').tooltip({
+                    html:true,
+
+                    title: "<div><h4>" + user_obj.username + "</h4><hr></div>",
+
+                    /*delay: {show: 0, hide: 100000000}*/
+                });
             }
         },
         error: function(response){
