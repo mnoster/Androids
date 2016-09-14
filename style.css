@@ -222,3 +222,19 @@ body{
 .friends-contain{
     text-align: left;
 }
+.tooltip > .tooltip-inner{
+    background-color: white;
+}
+.tooltip.top > .tooltip-arrow {
+    border-top-color: white;
+}
+.profile-messages{
+    background-color: rgba(0, 0, 0, 0.44);
+    margin:3px 0 3px 0;
+    border-radius: 4px;
+    height:80px;
+    overflow: auto;
+}
+.message-list{
+    margin-left:-20px;
+}

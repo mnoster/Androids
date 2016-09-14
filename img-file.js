@@ -59,3 +59,31 @@ function change_background_img() {
     });
 
 }
+
+$(document).on('click','#submit_song',function(){
+    change_song();
+});
+
+function change_song() {
+    var upload_file_form = $('#song_upload')[0]; //have to use the [0] because is a jQuery element and we later want to use it in javascript
+    var formData = new FormData(upload_file_form); //it is javascript here not jQuery 
+    $.ajax({
+        url: "song_handler.php",
+        method: 'post',
+        dataType: 'text',
+        mimeType: "audio/mpeg",
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (response) {
+            console.log("You successfully connected: ", response);
+            if(response == {"status":false}){
+                $("#song_upload").append('<span>').text("song size too big");
+            }
+        },
+        error: function (response) {
+            console.log("There was an error: ", response);
+        }
+    });
+
+}
