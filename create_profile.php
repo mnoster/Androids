@@ -21,9 +21,6 @@ if (empty($_SESSION)) {
     <script src="user_list.js"></script>
     <script src="contact_script.js"></script>
     <script src="display_my_friends.js"></script>
-
-    <!--    <script src="add_friend.js"></script>-->
-
 <body style="background-color:transparent">
 <nav class="navbar navbar-inverse">
     <div class="contatiner-fluid">
@@ -99,7 +96,6 @@ if (empty($_SESSION)) {
                 </audio>
             </div>
         </div>
-
     </div>
     <div class="container profile_info_container">
         <div class="row middle-profile-row">

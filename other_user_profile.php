@@ -17,9 +17,9 @@ if (empty($_SESSION)) {
     <link rel="stylesheet" href="style.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!--    <script src="other_user.js"></script>-->
     <script src="display_friends.js"></script>
     <script src="user_list.js"></script>
+    <script src="message.js"></script>
     <script src="add_friend.js"></script>
 
 <body style="background-color:transparent">
@@ -84,7 +84,7 @@ if (empty($_SESSION)) {
             <div class="col-xs-10 col-sm-2">
                 <div class="profile-header">
                     <button id="connect" value="<?=$_SESSION['o_ID']?>" class="btn btn-primary button-style">connect</button>
-                    <button id="squad" value="<?=$_SESSION['o_ID']?>" class="btn btn-warning button-style">squad</button>
+                    <button id="message" class="btn btn-warning button-style">message</button>
                 </div>
             </div>
         </div>
@@ -104,7 +104,7 @@ if (empty($_SESSION)) {
             <h4>Connects</h4>
             <div class="col-xs-12 friends-contain">
                 <ul class="profile-friends">
-                    
+
                 </ul>
             </div>
         </div>
