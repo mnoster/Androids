@@ -21,6 +21,7 @@ if (empty($_SESSION)) {
     <script src="user_list.js"></script>
     <script src="contact_script.js"></script>
     <script src="display_my_friends.js"></script>
+    <script src="display_messages.js"></script>
 <body style="background-color:transparent">
 <nav class="navbar navbar-inverse">
     <div class="contatiner-fluid">
@@ -108,9 +109,7 @@ if (empty($_SESSION)) {
             <div class="col-xs-12 col-sm-5 friends-contain">
                 <h4>Messages</h4>
                 <ul class="message-list">
-                    <li class="profile-messages"></li>
-                    <li class="profile-messages"></li>
-                    <li class="profile-messages"></li>
+
                 </ul>
             </div>
         </div>

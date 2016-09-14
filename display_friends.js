@@ -3,7 +3,6 @@
  */
 $(document).ready(function(){
     populate_profile_friends();
-    console.log("profile friends");
 });
 
 function populate_profile_friends(){
@@ -13,7 +12,6 @@ function populate_profile_friends(){
         dataType:'json',
         method: "post",
         success: function (response){
-            console.log("you connected successfully: " , response);
             for(var i = 0; i<response['friend_ID'].length; i++) {
                 var username = response['friend_ID'][i];
                 var src = response['profile_image_path'][i];
@@ -23,7 +21,6 @@ function populate_profile_friends(){
                     name: user_fullname,
                     username: username
                 };
-                console.log("user obj: " , user_obj);
                 if (response.status == "success") {
                     $(".profile-friends").append("<li class='img-list-style'><img name='" + user_obj.username + "' class='user_img_items' src='" + user_obj.image + "'/>" + user_obj.name + "</li>");
 

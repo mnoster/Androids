@@ -85,6 +85,7 @@ if (empty($_SESSION)) {
                 <div class="profile-header">
                     <button id="connect" value="<?=$_SESSION['o_ID']?>" class="btn btn-primary button-style">connect</button>
                     <button id="message" class="btn btn-warning button-style">message</button>
+                    <button id="picture" class="btn btn-info button-style">picture</button>
                 </div>
             </div>
         </div>
@@ -98,7 +99,6 @@ if (empty($_SESSION)) {
         </div>
 
     </div>
-
     <div class="container profile_info_container">
         <div class="row middle-profile-row">
             <h4>Connects</h4>

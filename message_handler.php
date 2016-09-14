@@ -3,10 +3,15 @@ session_start();
 include("mysql_connect.php");
 
 $sender_ID = $_SESSION['ID'];
+//print('sender' . $sender_ID);
 $receiver_ID = $_SESSION['o_ID'];
-$content = $_POST['content'];
+//print('receiver' . $receiver_ID);
 
-$query = "INSERT INTO messages(sender_ID, receiver_ID, content) VALUES ('$sender_ID','$receiver_ID','$content')";
+$content = $_POST['content'];
+//print('content' . $content);
+$profile_image_path = $_SESSION['profile_image_path'];
+
+$query = "INSERT INTO messages(sender_ID, receiver_ID, content, profile_image_path) VALUES ('$sender_ID','$receiver_ID','$content', '$profile_image_path')";
 
 $result = mysqli_query($conn,$query);
 
@@ -19,7 +24,7 @@ if($rows_affected > 0){
     $output = json_encode($output);
     print($output);
 }else{
-    $output['message'] = 'already connected';
+    $output['message'] = 'message did not send';
     $output['success'] = false;
     $output = json_encode($output);
     print($output);
