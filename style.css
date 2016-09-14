@@ -95,6 +95,7 @@ body{
 }
 .song-contain{
     padding-top:10px;
+    margin-bottom: 8px;
 }
 
 .song-contain>audio {
@@ -241,13 +242,19 @@ body{
     border-radius:8px;
     border-top-left-radius:80px;
     color:black;
-
-
-
 }
 .user_messages{
     height:50px;
     width:50px;
     border-radius:40px;
     margin-right: 5px;
+}
+.message-list{
+    overflow:hidden;
+    overflow-y:scroll;
+    height:60vh;
+    border: 3px solid rgba(19, 0, 255, 0.53);
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.28);
+
 }
