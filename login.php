@@ -1,8 +1,6 @@
 <?php
-session_start();
-$_SESSION['username'] = "";
-$_SESSION['url'] = "";
-?>
+//session_start();
+//?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
