@@ -9,7 +9,7 @@ $user_img_file = $_FILES['upload_file'];
 if (!empty('user_image')) {
     $image_name = pathinfo($_FILES['upload_file']['name']);
 }
-if($image_name['extension'] == 'gif'|| $image_name['extension'] == 'jpeg'|| $image_name['extension'] == 'jpg'|| $image_name['extension'] == 'png'){
+if($image_name['extension'] == 'gif'|| $image_name['extension'] == 'jpeg'|| $image_name['extension'] == 'jpg'|| $image_name['extension'] == 'png'|| $image_name['extension'] == 'JPG'|| $image_name['extension'] == 'JPEG'){
 //    print('<br>'. "Valid file type sent: ");
     $img_name_state = true;
 //    print_r($image_name['extension']);
