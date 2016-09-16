@@ -1,7 +1,7 @@
 <?php
 session_start();
 $username = $_SESSION['username'];
-$target_dir = 'user_image/'; //variable to hold target directory
+$target_dir = '/user_image/'; //variable to hold target directory
 $target_file = $target_dir . $_FILES['upload_file']['name'];// this will create a file path using directory
 $user_img_file = $_FILES['upload_file'];
 ?>
