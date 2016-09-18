@@ -7,7 +7,7 @@ $sender_ID = $_SESSION['ID'];
 $receiver_ID = $_SESSION['o_ID'];
 //print('receiver' . $receiver_ID);
 
-$content = $_POST['content'];
+$content =addslashes($_POST['content']);
 //print('content' . $content);
 $profile_image_path = $_SESSION['profile_image_path'];
 

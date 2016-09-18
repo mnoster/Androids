@@ -103,6 +103,7 @@ if (empty($_SESSION)) {
             <div class="col-xs-12 col-sm-5 friends-contain">
                 <h4>Messages</h4>
                 <ul class="message-list">
+                    <h4><?=$_SESSION['first_name']?>'s Messages </h4>
 
                 </ul>
             </div>
