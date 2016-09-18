@@ -65,7 +65,7 @@ body{
     border:1px solid black;
     border-radius: 3px;
     margin-top:10px;
-    background:rgba(251, 253, 255, 0.73)
+    /*background:rgba(251, 253, 255, 0.73)*/
 }
 .profile_info_container{
     border:1px solid black;
@@ -151,6 +151,7 @@ body{
 #save_changes_btn{
     margin:10px 8px;
     color:black;
+    border:2px solid  #1dc116 ;
 }
 
 #upload-img-file, #upload-background-img-file, #upload-song{
@@ -159,7 +160,10 @@ body{
 }
 .change-img-row{
  margin-top: 10px;
-
+}
+.yellow-btn{
+    background-color: yellow;
+    color:black;
 }
 .to-bottom{
     text-align: right;
@@ -256,5 +260,19 @@ body{
     border: 3px solid rgba(19, 0, 255, 0.53);
     border-radius: 4px;
     background-color: rgb(255, 255, 255);
-
+}
+#A{
+    background-color: #1dc116;
+}
+#B{
+    background-color: deepskyblue;
+}
+#C{
+    background-color:red;
+}
+#Q{
+    background-color: #be40db;
+}
+.class{
+    border:1px solid black;
 }

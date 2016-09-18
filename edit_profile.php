@@ -85,12 +85,20 @@ if (empty($_SESSION)) {
             <h4>Last Name: </h4><input class="inputs" id="last_name" placeholder="<?= $_SESSION['last_name'] ?>">
             <h4>Email: </h4><input class="inputs" id="email" placeholder="<?= $_SESSION['email'] ?>">
             <h4>Age: <span class="pull-right glyphicon glyphicon-download btn-to-bottom"></span> </h4><input id="age" placeholder="<?= $_SESSION['age'] ?>">
+            <h4>Background color : <div class="btn-group">
+                    <button type="button" class="btn btn-default color_btn" value="(251, 253, 255, 0.64)">White</button>
+                    <button type="button" class="btn btn-danger color_btn" value="(255, 15, 0, 0.61)">Red</button>
+                    <button type="button" class="btn yellow-btn color_btn" value="(255, 252, 0, 0.62)">Yellow</button>
+                    <button type="button" class="btn btn-success color_btn" value="(0, 255, 19, 0.63)">Green</button>
+                    <button type="button" class="btn btn-info color_btn" value="(0, 186, 245, 0.61)">Blue</button>
+                    </div>
+            </h4>
 
         </div>
     </div>
     <div class="row to-bottom">
         <div class="col-xs-3">
-            <button class="btn" id="save_changes_btn">save changes</button>
+            <button class="btn btn-lg" id="save_changes_btn">save changes</button>
         </div>
         <div class="col-xs-8">
 

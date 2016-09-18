@@ -45,6 +45,8 @@ if ($result->num_rows > 0) {
         $_SESSION["o_state"]=$row["state"];
         $user_info[] = $row["full_name"];
         $_SESSION["o_full_name"]=$row["full_name"];
+        $user_info[] = $row["backdrop_color"];
+        $_SESSION["o_backdrop_color"]=$row["backdrop_color"];
         $user_info[] = $row["ID"];
         $_SESSION["o_ID"]=$row["ID"];
 //        echo "username: " . $row["username"]. " profile image: " . $row["quote"]. " " . $row["background_image_path"]. "<br>";
@@ -60,6 +62,7 @@ $result2 = $conn->query($query);
 
 if($result2->num_rows > 0){
     $_SESSION['friend_status'] = "already friends";
+    $user_info['friend_status'] = 'friend';
 }else{
     $_SESSION['friend_status']= 'connect';
 }

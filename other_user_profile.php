@@ -4,6 +4,11 @@ if (empty($_SESSION)) {
     header("Location: login.php"); /* Redirect browser, this function is not working properly */
     exit();
 }
+if($_SESSION['friend_status']=='friend'){
+
+//    $("<button type='button' class='btn btn-primary dropdown-toggle' data-toggle='dropdown'>Sony <span class='caret'></span></button> <ul class='dropdown-menu' role='menu'> <li><a href='#'>Tablet</a></li> <li><a href='#'>Smartphone</a></li> </ul>").appendTo('nav');
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -68,10 +73,10 @@ if (empty($_SESSION)) {
         </div>
     </div>
 </nav>
-<div class="container-fluid" style="background:rgba(251, 253, 255, 0.73)">
-    <div class="container profile_container" >
+<div class="container-fluid" style="background:rgba(224, 224, 224, 0.21)">
+    <div class="container profile_container" style="background:rgba<?=$_SESSION['o_backdrop_color']?>" >
         <div class="row profile-row">
-            <div class="col-xs-4 col-md-3 col-lg-2 ">
+            <div class="col-xs-4 col-md-3 col-lg-2">
                 <div class="img-container">
                     <img id="profile_pic" class="img-responsive" src="<?= $_SESSION['o_profile_image_path'] ?>">
                 </div>
@@ -99,7 +104,7 @@ if (empty($_SESSION)) {
         </div>
 
     </div>
-    <div class="container profile_info_container">
+    <div class="container profile_info_container" style="background:rgba<?=$_SESSION['o_backdrop_color']?>">
         <div class="row middle-profile-row">
             <h4>Connects</h4>
             <div class="col-xs-12 friends-contain">

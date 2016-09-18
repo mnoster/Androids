@@ -20,9 +20,11 @@ function send_message(){
                 if (response.message == "success") {
                     // $(".profile-friends").append("<li class='img-list-style'><img name='" + user_obj.username + "' class='user_img_items' src='" + user_obj.image + "'/>" + user_obj.name + "</li>");
                     $("#msg_content").val("").remove();
+                    function setTimeout(){
+                        //this will let the user know the message has been sent
+                    }
                     $('.send_msg').remove();
-                    $('#message').show();
-
+                    $('#message').show().text('').append('<li><a id="A" class="class" value="A">A</a><a id="B" class="class" value="B">B</a><a id="C" class="class" value="C">C</a><a id="C" class="class" value="Q">Q</a></li>')
 
                 }
         },

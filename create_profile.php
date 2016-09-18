@@ -69,8 +69,8 @@ if (empty($_SESSION)) {
         </div>
     </div>
 </nav>
-<div class="container-fluid" style="background:rgba(251, 253, 255, 0.73)">
-    <div class="container profile_container" >
+<div class="container-fluid" style="background:rgba(251, 253, 255, 0.19)">
+    <div class="container profile_container" style="background:rgba<?=$_SESSION['backdrop_color']?>">
         <div class="row profile-row">
             <div class="col-xs-4 col-md-3 col-lg-2 ">
                 <div class="img-container">
@@ -98,7 +98,7 @@ if (empty($_SESSION)) {
             </div>
         </div>
     </div>
-    <div class="container profile_info_container">
+    <div class="container profile_info_container" style="background:rgba<?=$_SESSION['backdrop_color']?>">
         <div class="row middle-profile-row">
             <div class="col-xs-12 col-sm-5 friends-contain">
                 <h4>Messages</h4>
