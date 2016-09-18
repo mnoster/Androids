@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <title>lo-qo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="secret_handler.js"></script>
 
 <body style="{'background-color': 'black'}">
 <nav class="navbar navbar-inverse">
@@ -36,39 +37,9 @@
     <div class="login-inner">
         <input id="secret" type="password" class="form-control" required="" autofocus >
         <br>
-        <button class="btn-primary secret">secret</button>
+        <button class="btn-primary btn secret">submit code</button>
     </div>
 
 </div>
 </body>
 </html>
-<script>
-    $(document).on('click',".secret",function(){
-      check_secret();
-    });
-    function check_secret(){
-        var secret = $('#secret').val();
-        console.log("secret: " , secret);
-        $.ajax({
-            url:'secret-handler.php',
-            method: 'POST',
-            data:{
-                code:secret
-            },
-            dataType: 'json',
-            success: function(response){
-                console.log("response is success: " , response);
-                if(response.success == true){
-                    window.location.replace('register_user.php');
-                }
-                else{
-                    $('.login-inner').append($('<div>').addClass("text-danger").text("Invalid code"));
-
-                }
-            },
-            error: function(response){
-                console.log("there was an error: " , response);
-            }
-        })
-    }
-</script>

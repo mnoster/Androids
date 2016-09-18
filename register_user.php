@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="register_user.js"></script>
-<body style="background-color: whitesmoke">
+<body style="background-color: #250065">
 <nav class="navbar navbar-inverse">
     <div class="contatiner-fluid">
         <div class="navbar-header navigation-titles">
@@ -32,23 +32,24 @@
         </div>
     </div>
 </nav>
-<div class="container">
-    <div class="wrapper">
+<div class="container login-background">
+    <div class="wrapper login-inner">
         <form class="form-signin">
             <h2 class="form-signin-heading">Sign up</h2>
-            <input type="text" class="form-control" name="username" id="username" placeholder="username"/>
-            <input type="email" class="form-control" name="email" id="email" placeholder="Email Address"/>
-            <input type="password" class="form-control" name="password" id="password" placeholder="Password" />
-            <input type="password" class="form-control" name="password2" id="password2" placeholder="Retype Password"/>
+            <input type="text" class="form-control form-group" name="username" id="username" placeholder="username"/>
+            <input type="email" class="form-control form-group" name="email" id="email" placeholder="Email Address"/>
+            <input type="password" class="form-control form-group" name="password" id="password" placeholder="Password" />
+            <input type="password" class="form-control form-group" name="password2" id="password2" placeholder="Retype Password"/>
             <label class="checkbox">
                 <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
             </label>
         </form>
-        <button class="btn btn-lg btn-primary btn-block" id="create_user">Login</button>
+        <button class="btn btn-lg btn-primary btn-block" id="create_user">Sign Up</button>
+        <p style="margin-top:10px">Already a member? Sign in <a href="login.php">here</a></p>
+        <div id="#error-message"></div>
     </div>
     <br>
-    <p>Already a member? Sign in <a href="login.php">here</a></p>
-    <div id="#error-message"></div>
+
 </div>
 </body>
 </html>

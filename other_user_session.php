@@ -45,18 +45,30 @@ if ($result->num_rows > 0) {
         $_SESSION["o_state"]=$row["state"];
         $user_info[] = $row["full_name"];
         $_SESSION["o_full_name"]=$row["full_name"];
+        $user_info[] = $row["backdrop_color"];
+        $_SESSION["o_backdrop_color"]=$row["backdrop_color"];
         $user_info[] = $row["ID"];
         $_SESSION["o_ID"]=$row["ID"];
 //        echo "username: " . $row["username"]. " profile image: " . $row["quote"]. " " . $row["background_image_path"]. "<br>";
     }
     $user_info['status'] = "success";
+    $friend_2 = $_SESSION["o_ID"];
+    $friend_1 = $_SESSION['ID'];
 } else {
     echo "0 results";
 }
+$query2 = "SELECT * FROM `friends` WHERE `friend1`= '$friend_1' AND `friend2` ='$friend_2'";
+$result2 = $conn->query($query);
+
+if($result2->num_rows > 0){
+    $_SESSION['friend_status'] = "already friends";
+    $user_info['friend_status'] = 'friend';
+}else{
+    $_SESSION['friend_status']= 'connect';
+}
+
 if($user_info['status']=='success'){
     $user_info = json_encode($user_info);
     print($user_info);  
 }
-
-
 ?>

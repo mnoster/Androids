@@ -41,11 +41,11 @@ if (empty($_SESSION)) {
                        aria-expanded="false">ME<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="create_profile.php">profile</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="companions.php">connects</a></li>
-                        <li role="separator" class="divider"></li>
-<!--                        <li><a href="squad.php">squad</a></li>-->
 <!--                        <li role="separator" class="divider"></li>-->
+<!--                        <li><a href="companions.php">connects</a></li>-->
+                        <li role="separator" class="divider"></li>
+                        <li><a href="contact.php">contact</a></li>
+                        <li role="separator" class="divider"></li>
                         <li><a href="edit_profile.php">edit profile</a></li>
                     </ul>
                 </li>
@@ -53,7 +53,7 @@ if (empty($_SESSION)) {
                 <li id="contact"><a href="contact.php">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="secret.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+<!--                <li><a href="secret.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>-->
                 <!--                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -69,8 +69,8 @@ if (empty($_SESSION)) {
         </div>
     </div>
 </nav>
-<div class="container-fluid" style="background:rgba(251, 253, 255, 0.73)">
-    <div class="container profile_container" >
+<div class="container-fluid" style="background:rgba(251, 253, 255, 0.19)">
+    <div class="container profile_container" style="background:rgba<?=$_SESSION['backdrop_color']?>">
         <div class="row profile-row">
             <div class="col-xs-4 col-md-3 col-lg-2 ">
                 <div class="img-container">
@@ -84,7 +84,6 @@ if (empty($_SESSION)) {
             </div>
             <div class="col-xs-10 col-sm-2">
                 <div class="profile-header">
-                    <button id="connect" value="<?=$_SESSION['ID']?>" class="btn btn-primary button-style">connect</button>
 <!--                    <button id="squad" value="--><?//=$_SESSION['ID']?><!--" class="btn btn-warning button-style">squad</button>-->
                 </div>
             </div>
@@ -98,11 +97,12 @@ if (empty($_SESSION)) {
             </div>
         </div>
     </div>
-    <div class="container profile_info_container">
+    <div class="container profile_info_container" style="background:rgba<?=$_SESSION['backdrop_color']?>">
         <div class="row middle-profile-row">
             <div class="col-xs-12 col-sm-5 friends-contain">
                 <h4>Messages</h4>
                 <ul class="message-list">
+                    <h4><?=$_SESSION['first_name']?>'s Messages </h4>
 
                 </ul>
             </div>

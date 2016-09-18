@@ -57,7 +57,6 @@ function go_to_user_profile(username){
             // console.log("you connected successfully: " , response[12]);
             if(response.status == "success"){
                 window.location.replace("other_user_profile.php");
-
             }
         },
         error: function(response){
