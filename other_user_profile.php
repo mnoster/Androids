@@ -83,7 +83,7 @@ if (empty($_SESSION)) {
             </div>
             <div class="col-xs-10 col-sm-2">
                 <div class="profile-header">
-                    <button id="connect" value="<?=$_SESSION['o_ID']?>" class="btn btn-primary button-style">connect</button>
+                    <button id="connect" value="<?=$_SESSION['o_ID']?>" class="btn btn-primary button-style"><?=$_SESSION['friend_status']?></button>
                     <button id="message" class="btn btn-warning button-style">message</button>
                     <button id="picture" class="btn btn-info button-style">picture</button>
                 </div>

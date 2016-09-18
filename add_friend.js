@@ -14,7 +14,7 @@ function add_friend(){
             friend_ID: friend_ID
         },
         success: function(response){
-            console.log("you connected successfully: " , response);
+            console.log("you clicked add friend: " , response);
         },
         error: function(response){
             console.log("there was an error: " , response)
@@ -34,7 +34,7 @@ function add_squad(){
         success: function(response){
             console.log("you connected successfully: " , response);
         },
-        error: function(repsonse){
+        error: function(response){
             console.log("there was an error: " , response)
         }
     });
