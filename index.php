@@ -1,9 +1,9 @@
 <?php
 
-if(empty($_SESSION['username'])){
+if(empty($_SESSION)){
     include('login.php');
 }
 else{
-    include('default-home.php');
+    include('create_profile.php');
 }
 ?>

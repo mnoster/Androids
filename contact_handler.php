@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 require_once('email_config.php');
 require('phpmailer/PHPMailer/PHPMailerAutoload.php');

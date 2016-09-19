@@ -111,7 +111,6 @@ if (empty($_SESSION)) {
                 <ul class="profile-friends">
                 </ul>
             </div>
-
         </div>
     </div>
 </div>

@@ -6,17 +6,17 @@ $target_file = $target_dir . $_FILES['upload_file']['name'];// this will create 
 $user_img_file = $_FILES['upload_file'];
 ?>
 <?php
+if(!is_dir($target_dir)){
+    mkdir($target_dir);
+}
 if (!empty('user_image')) {
     $image_name = pathinfo($_FILES['upload_file']['name']);
 }
 if($image_name['extension'] == 'gif'|| $image_name['extension'] == 'jpeg'|| $image_name['extension'] == 'jpg'|| $image_name['extension'] == 'png'|| $image_name['extension'] == 'JPG'|| $image_name['extension'] == 'JPEG'){
-//    print('<br>'. "Valid file type sent: ");
     $img_name_state = true;
-//    print_r($image_name['extension']);
 }
 if($user_img_file['size'] > 2000000){
 //    print('<br>'."File size is too big, 2MB max");
-
     $img_size_state['status'] = false;
     $img_size_state = json_encode($img_size_state);
     print($img_size_state);
