@@ -5,6 +5,7 @@ $(document).on('click','#submit',function(){
     mailer();
 });
 function mailer(){
+    $('#submit').text('').append("<img src='images/loader.gif' width='64' height='64' />");
     var name = $("#name").val();
     console.log("name: " , name);
     var email = $("#email").val();
@@ -24,7 +25,11 @@ function mailer(){
             content:content
         },
         success: function(response){
-//				console.log("connection was success: " , response);
+            $("#name").val(" ");
+            $("#email").val(" ");
+            $('#subject').val(" ");
+            $('#textarea').val(" ");
+            window.location.replace('index.php');
         },
         error: function(response){
             console.log("there was an error: " ,response);
