@@ -46,10 +46,10 @@ if($_SESSION['friend_status']=='friend'){
                        aria-expanded="false">ME<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="create_profile.php">profile</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="companions.php">connects</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="squad.php">squad</a></li>
+<!--                        <li role="separator" class="divider"></li>-->
+<!--                        <li><a href="companions.php">connects</a></li>-->
+<!--                        <li role="separator" class="divider"></li>-->
+<!--                        <li><a href="squad.php">squad</a></li>-->
                         <li role="separator" class="divider"></li>
                         <li><a href="edit_profile.php">edit profile</a></li>
                     </ul>

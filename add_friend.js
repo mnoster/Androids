@@ -5,7 +5,7 @@ $(document).on('mouseup',"#connect",function(){
 
 function add_friend(){
     var friend_ID = $('#connect').attr('value');
-    console.log("friend id: ", friend_ID);
+    // console.log("friend id: ", friendend_ID);
     $.ajax({
         url:"add_friend_handler.php",
         method: 'post',
