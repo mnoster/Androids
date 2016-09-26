@@ -60,30 +60,4 @@ function go_to_user_profile(username){
         }
     })
 }
-// $(document).on('click','.img-list-style',function(){
-//     var username = $(this).children(".user_img_items").attr("name");
-//     // console.log("username: " ,username);
-//     go_to_user_profile_from_profile(username);
-//
-// });
-//
-// function go_to_user_profile_from_profile(username){
-//     $.ajax({
-//         url: "other_user_session.php",
-//         dataType:'json',
-//         method: "post",
-//         data:{
-//             username: username
-//         },
-//         success: function (response){
-//             // console.log("you connected successfully: " , response[12]);
-//             if(response.status == "success"){
-//                 window.location.replace("other_user_profile.php");
-//             }
-//         },
-//         error: function(response){
-//             console.log("there was an error: ", response );
-//         }
-//     })
-// }
 
