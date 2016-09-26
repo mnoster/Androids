@@ -1,4 +1,4 @@
-$(document).on('mouseup',"#connect",function(){
+$(document).on('click',"#connect",function(){
    add_friend();
     console.log("connect clicked");
 });

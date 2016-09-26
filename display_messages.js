@@ -1,7 +1,6 @@
 
 $(document).ready(function(){
     populate_messages();
-    console.log("profile messages");
 });
 
 function populate_messages(){
@@ -11,7 +10,6 @@ function populate_messages(){
         dataType:'json',
         method: "post",
         success: function (response){
-            console.log("you connected successfully: " , response);
             for(var i = 0; i<response['content'].length; i++) {
                 var src = response['profile_image_path'][i];
                 var content = response['content'][i];
@@ -19,7 +17,6 @@ function populate_messages(){
                     image: src,
                     content:content,
                 };
-                console.log("user obj: " , message_obj);
                 if (response.status == "success") {
                     $(".message-list").append("<li class='message-list-style'><img  class='user_messages' src='" + message_obj.image + "'/><br>" + message_obj.content + "</li>");
                 }
