@@ -15,6 +15,9 @@ function add_friend(){
         },
         success: function(response){
             console.log("you clicked add friend: " , response);
+            if(response.message == 'already connected'){
+                $('#connect').text('already friends');
+            }
         },
         error: function(response){
             console.log("there was an error: " , response)

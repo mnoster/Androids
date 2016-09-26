@@ -35,7 +35,7 @@ if (empty($_SESSION)) {
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="notifications.php">Notifications</a></li>
+<!--                <li class="active"><a href="notifications.php">Notifications</a></li>-->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">ME<span class="caret"></span></a>
