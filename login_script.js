@@ -19,14 +19,14 @@ function user_login() {
         },
         dataType: 'json',
         success: function (response) {
-            console.log("response is success: ", response);
+            // console.log("response is success: ", response);
             if (response.success == true) {
                 populate_user_profile_info(username);
                 window.location.replace('create_profile.php');
             }
         },
         error: function (response) {
-            console.log("there was an error: ", response);
+            // console.log("there was an error: ", response);
             $('<div>').addClass("text-danger").text("Invalid code").appendTo('#error-message');
         }
     })
@@ -40,7 +40,7 @@ function populate_user_profile_info(username){
         },
         dataType: 'json',
         success: function (response) {
-            console.log("get user info is success: ", response);
+            // console.log("get user info is success: ", response);
         },
         error: function (response) {
             console.log("there was an error: ", response);

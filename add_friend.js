@@ -1,11 +1,11 @@
-$(document).on('mouseup',"#connect",function(){
+$(document).on('click',"#connect",function(){
    add_friend();
     console.log("connect clicked");
 });
 
 function add_friend(){
     var friend_ID = $('#connect').attr('value');
-    console.log("friend id: ", friend_ID);
+    // console.log("friend id: ", friendend_ID);
     $.ajax({
         url:"add_friend_handler.php",
         method: 'post',
@@ -15,6 +15,9 @@ function add_friend(){
         },
         success: function(response){
             console.log("you clicked add friend: " , response);
+            if(response.message == 'already connected'){
+                $('#connect').text('already friends');
+            }
         },
         error: function(response){
             console.log("there was an error: " , response)

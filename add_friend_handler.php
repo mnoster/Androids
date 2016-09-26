@@ -3,7 +3,7 @@ session_start();
 include("mysql_connect.php");
 
 $user_ID = $_SESSION['ID'];
-$friend_ID = $_POST['friend_ID'];
+$friend_ID = addslashes($_POST['friend_ID']);
 $status = 1;
 $query = "INSERT INTO friends(friend_1, friend_2, status) VALUES ('$user_ID','$friend_ID','$status')";
 

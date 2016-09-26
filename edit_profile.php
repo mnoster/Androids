@@ -5,7 +5,6 @@ if (empty($_SESSION)) {
     exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +19,6 @@ if (empty($_SESSION)) {
     <script src="login_script.js"></script>
     <script src="user_list.js"></script>
     <script src="img-file.js"></script>
-
 <body style="background-color:black">
 <nav class="navbar navbar-inverse">
     <div class="contatiner-fluid">
@@ -93,7 +91,6 @@ if (empty($_SESSION)) {
                     <button type="button" class="btn btn-info color_btn" value="(0, 186, 245, 0.61)">Blue</button>
                     </div>
             </h4>
-
         </div>
     </div>
     <div class="row to-bottom">
@@ -101,7 +98,6 @@ if (empty($_SESSION)) {
             <button class="btn btn-lg" id="save_changes_btn">save changes</button>
         </div>
         <div class="col-xs-8">
-
         </div>
     </div>
     <div class="row change-img-row">
@@ -126,7 +122,6 @@ if (empty($_SESSION)) {
     <div class="row change-img-row">
         <button class="btn btn-info" id="submit_background_img">change background image</button>
     </div>
-    
     <div class="row change-img-row">
         <h4>Change profile song</h4>
         <div class="col-xs-12 file_btn">

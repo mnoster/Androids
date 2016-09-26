@@ -12,8 +12,9 @@ function populate_profile_friends(){
         dataType:'json',
         method: "post",
         success: function (response){
+            console.log("this is response: " , response);
             for(var i = 0; i<response['friend_ID'].length; i++) {
-                var username = response['friend_ID'][i];
+                var username = response['username'][i];
                 var src = response['profile_image_path'][i];
                 var user_fullname = response['full_name'][i];
                 var user_obj = {  //made user obj for possible later use
@@ -28,7 +29,7 @@ function populate_profile_friends(){
             }
         },
         error: function(response){
-            console.log("there was an error: ", response );
+            console.log("there was an error in display friends: ", response );
         }
     })
 }

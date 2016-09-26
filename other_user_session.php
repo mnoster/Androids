@@ -57,16 +57,23 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
-$query2 = "SELECT * FROM `friends` WHERE `friend1`= '$friend_1' AND `friend2` ='$friend_2'";
-$result2 = $conn->query($query);
+$query2 = "SELECT * FROM `friends` WHERE `friend_1`= '$friend_1' AND `friend_2` ='$friend_2'";
+$result2 = $conn->query($query2);
+
 
 if($result2->num_rows > 0){
-    $_SESSION['friend_status'] = "already friends";
-    $user_info['friend_status'] = 'friend';
-}else{
-    $_SESSION['friend_status']= 'connect';
-}
+    while($row = $result->fetch_assoc()) {
 
+        if($row['status'] == 2){
+            $_SESSION['friend_status'][] = "already friends";
+            $user_info['friend_status'][] = 'friend';
+        }
+
+    }
+}
+else{
+    $_SESSION['friend_status'][] = "connect";
+}
 if($user_info['status']=='success'){
     $user_info = json_encode($user_info);
     print($user_info);  

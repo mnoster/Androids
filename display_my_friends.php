@@ -11,7 +11,7 @@ $output = [];
 $friend_ID = $_SESSION['ID'];
 //print("friend ID: " . $friend_ID . '<br>');
 
-$query = "SELECT u.full_name, u.profile_image_path, f.friend_1, f.status, f.friend_2, u.ID 
+$query = "SELECT u.full_name, u.profile_image_path, f.friend_1, f.status, f.friend_2, u.ID , u.username
             FROM friends AS f
             JOIN users AS u
             ON u.ID = friend_2
@@ -36,6 +36,7 @@ if ($result->num_rows > 0) {
         $output['status'][] = $row['status'];
         $output['friend_ID'][] = $row['ID'];
         $output['current_friend'][] = $row['friend_1'];
+        $output['username'][] = $row['username'];
 
     };
     $output['status'] = 'success';

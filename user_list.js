@@ -28,7 +28,7 @@ function populate_user_list(){
             }
         },
         error: function(response){
-            console.log("there was an error: ", response );
+            console.log("there was an error in user list handler: ", response );
         }
     })
 }
@@ -36,6 +36,7 @@ $(document).on('click','.img-list-style',function(){
     var username = $(this).children(".user_img_items").attr("name");
     // console.log("username: " ,username);
     go_to_user_profile(username);
+    console.log('button: ' , username);
 
 });
 
@@ -55,7 +56,7 @@ function go_to_user_profile(username){
             }
         },
         error: function(response){
-            console.log("there was an error: ", response );
+            console.log("there was an error in other user session: ", response );
         }
     })
 }

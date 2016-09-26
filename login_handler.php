@@ -1,8 +1,7 @@
 <?php
 session_start();
 include('mysql_connect.php');
-//var_dump(mysqli_connect_error());
-//var_dump($conn->connect_error);
+
 if ($conn->connect_error) {
     
     die("Connection failed ");

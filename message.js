@@ -15,8 +15,6 @@ function send_message(){
         data: {content:content},
         method: "post",
         success: function (response){
-            console.log("you connected successfully: " , response);
-
                 if (response.message == "success") {
                     // $(".profile-friends").append("<li class='img-list-style'><img name='" + user_obj.username + "' class='user_img_items' src='" + user_obj.image + "'/>" + user_obj.name + "</li>");
                     $("#msg_content").val("").remove();
@@ -24,7 +22,7 @@ function send_message(){
                         //this will let the user know the message has been sent
                     }
                     $('.send_msg').remove();
-                    $('#message').show().text('').append('<li><a id="A" class="class" value="A">A</a><a id="B" class="class" value="B">B</a><a id="C" class="class" value="C">C</a><a id="C" class="class" value="Q">Q</a></li>')
+                    // $('#message').show().text('').append('<li><a id="A" class="class" value="A">A</a><a id="B" class="class" value="B">B</a><a id="C" class="class" value="C">C</a><a id="C" class="class" value="Q">Q</a></li>')
 
                 }
         },
